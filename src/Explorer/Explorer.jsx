@@ -10,7 +10,19 @@ const Explorer = ({ content, onItemClick, onItemKeyPress }) => (
       {'Content'}
     </h1>
     <ul>
-      {content.children.map(child => (
+      {content.parent && (
+        <li>
+          <Button
+            type="button"
+            onClick={onItemClick}
+            onKeyPress={onItemKeyPress}
+            data-path={content.parent}
+          >
+            {`../${content.parent}`}
+          </Button>
+        </li>
+      )}
+      {content.children.sort((a, b) => (a.data > b.data ? 1 : -1)).map(child => (
         <li
           key={child.data}
         >
@@ -30,18 +42,6 @@ const Explorer = ({ content, onItemClick, onItemKeyPress }) => (
           )}
         </li>
       ))}
-      {content.parent && (
-        <li>
-          <Button
-            type="button"
-            onClick={onItemClick}
-            onKeyPress={onItemKeyPress}
-            data-path={content.parent}
-          >
-            {`../${content.parent}`}
-          </Button>
-        </li>
-      )}
     </ul>
   </div>
 );
