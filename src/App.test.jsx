@@ -3,9 +3,13 @@ import { shallow } from 'enzyme';
 
 import App from './App';
 
+let wrapper;
+let instance;
 let eventFn;
 
 beforeEach(() => {
+  wrapper = shallow(<App />);
+  instance = wrapper.instance();
   eventFn = Object.assign(jest.fn(), {
     preventDefault: () => {},
     target: { dataset: { path: 'root' } },
@@ -13,21 +17,17 @@ beforeEach(() => {
 });
 
 it('should handle item clicks', () => {
-  const wrapper = shallow(<App />);
-  const instance = wrapper.instance();
   instance.handleItemClick(eventFn);
   expect(instance.state.currentPath).toEqual('root');
 });
 
 it('should handle item key presses', () => {
-  const wrapper = shallow(<App />);
-  const instance = wrapper.instance();
   instance.handleItemKeyPress(eventFn);
   expect(instance.state.currentPath).toEqual('root');
 });
 
-it('should return an object', () => {
-
+it('should return object representing current item in file system tree', () => {
+  expect(instance.traverse('root'));
 });
 
 afterEach(() => eventFn.mockReset());

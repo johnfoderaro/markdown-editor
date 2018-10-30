@@ -5,6 +5,8 @@ import { createGlobalStyle } from 'styled-components';
 import Container from './Container';
 import Explorer from './Explorer';
 
+import queue from './utils/queue';
+
 const GlobalStyle = createGlobalStyle`
   * {
     box-sizing: border-box;
@@ -86,32 +88,21 @@ class App extends React.Component {
   }
 
   traverse(currentPath) {
+    let current;
     const { content } = this.state;
-    const queue = () => {
-      const items = [];
-      return {
-        enqueue(n) {
-          items.push(n);
-        },
-        dequeue() {
-          return items.shift();
-        },
-      };
-    };
     const nodeQueue = queue();
     nodeQueue.enqueue(content);
-    let current = nodeQueue.dequeue();
+    current = nodeQueue.dequeue();
     while (current) {
       for (let n = 0; n < current.children.length; n += 1) {
         nodeQueue.enqueue(current.children[n]);
       }
       if (current.data === currentPath) {
-        // console.log(current);
-        return current;
+        break;
       }
       current = nodeQueue.dequeue();
     }
-    return false;
+    return current;
   }
 
   render() {
