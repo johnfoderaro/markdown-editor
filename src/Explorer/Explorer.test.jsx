@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 
 import Explorer from './Explorer';
-import Button from '../Button';
+// import Button from '../Button';
 
 let content;
 let wrapper;

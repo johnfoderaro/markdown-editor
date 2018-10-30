@@ -27,7 +27,8 @@ it('should handle item key presses', () => {
 });
 
 it('should return object representing current item in file system tree', () => {
-  expect(instance.traverse('root'));
+  expect(instance.traverse('root')).toEqual(instance.state.content);
+  expect(instance.traverse('directory1')).toEqual(instance.state.content.children[0]);
 });
 
 afterEach(() => eventFn.mockReset());

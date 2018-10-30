@@ -5,8 +5,6 @@ import { createGlobalStyle } from 'styled-components';
 import Container from './Container';
 import Explorer from './Explorer';
 
-import queue from './utils/queue';
-
 const GlobalStyle = createGlobalStyle`
   * {
     box-sizing: border-box;
@@ -90,6 +88,17 @@ class App extends React.Component {
   traverse(currentPath) {
     let current;
     const { content } = this.state;
+    const queue = () => {
+      const items = [];
+      return {
+        enqueue(n) {
+          items.push(n);
+        },
+        dequeue() {
+          return items.shift();
+        },
+      };
+    };
     const nodeQueue = queue();
     nodeQueue.enqueue(content);
     current = nodeQueue.dequeue();
