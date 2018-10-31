@@ -39,6 +39,16 @@ class App extends React.Component {
           type: 'directory',
           parent: 'root',
           children: [{
+            data: 'directoryB',
+            type: 'directory',
+            parent: 'directory1',
+            children: [],
+          }, {
+            data: 'fileB',
+            type: 'file',
+            parent: 'directory1',
+            children: [],
+          }, {
             data: 'fileA',
             type: 'file',
             parent: 'directory1',
@@ -99,6 +109,13 @@ class App extends React.Component {
         },
       };
     };
+    // TODO break this into its own method
+    // could be useful for other sort scenarios
+    // alphabetical, reverse alphabetical, time ascending/descending etc
+    const sortChildren = ({ children, ...items }) => ({
+      children: children.sort((a, b) => (a.data > b.data ? 1 : -1)),
+      ...items,
+    });
     const nodeQueue = queue();
     nodeQueue.enqueue(content);
     current = nodeQueue.dequeue();
@@ -111,7 +128,7 @@ class App extends React.Component {
       }
       current = nodeQueue.dequeue();
     }
-    return current;
+    return sortChildren(current);
   }
 
   render() {
