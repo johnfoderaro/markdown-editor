@@ -24,6 +24,6 @@ const Button = ({ children, ...props }) => (
   </Block>
 );
 
-Button.propTypes = { children: PropTypes.string.isRequired };
+Button.propTypes = { children: PropTypes.node.isRequired };
 
 export default hot(module)(Button);

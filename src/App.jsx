@@ -2,8 +2,8 @@ import React from 'react';
 import { hot } from 'react-hot-loader';
 import { createGlobalStyle } from 'styled-components';
 
-import Container from './Container';
-import Explorer from './Explorer';
+import Container from './blocks/Container';
+import Explorer from './components/Explorer';
 
 const GlobalStyle = createGlobalStyle`
   * {
