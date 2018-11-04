@@ -1,11 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Button /> should render correctly 1`] = `
+exports[`<Li /> should render correctly 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <Button>
+  Symbol(enzyme.__unrendered__): <Li>
     Test
-  </Button>,
+  </Li>,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],
@@ -29,27 +29,12 @@ ShallowWrapper {
       "componentStyle": ComponentStyle {
         "componentId": "sc-bdVaJa",
         "isStatic": true,
-        "rules": Array [
-          "
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  font: inherit;
-  text-decoration: underline;
-  display: inline;
-  margin: 0;
-  padding: 0;
-  &:hover,
-  &:focus {
-    text-decoration: none;
-  }
-",
-        ],
+        "rules": Array [],
       },
-      "displayName": "styled.button",
+      "displayName": "styled.li",
       "render": [Function],
       "styledComponentId": "sc-bdVaJa",
-      "target": "button",
+      "target": "li",
       "warnTooManyClasses": [Function],
       "withComponent": [Function],
     },
@@ -70,27 +55,12 @@ ShallowWrapper {
         "componentStyle": ComponentStyle {
           "componentId": "sc-bdVaJa",
           "isStatic": true,
-          "rules": Array [
-            "
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  font: inherit;
-  text-decoration: underline;
-  display: inline;
-  margin: 0;
-  padding: 0;
-  &:hover,
-  &:focus {
-    text-decoration: none;
-  }
-",
-          ],
+          "rules": Array [],
         },
-        "displayName": "styled.button",
+        "displayName": "styled.li",
         "render": [Function],
         "styledComponentId": "sc-bdVaJa",
-        "target": "button",
+        "target": "li",
         "warnTooManyClasses": [Function],
         "withComponent": [Function],
       },
