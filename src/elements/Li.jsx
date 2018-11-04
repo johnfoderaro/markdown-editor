@@ -2,11 +2,11 @@ import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
-const StyledLi = styled.li;
+const StyledLi = styled.li``;
 
 const Li = ({ children }) => (
   <StyledLi>
-    {...children}
+    {children}
   </StyledLi>
 );
 

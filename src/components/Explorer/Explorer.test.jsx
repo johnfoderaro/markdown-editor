@@ -2,8 +2,13 @@ import React from 'react';
 import { shallow } from 'enzyme';
 
 import Explorer from './Explorer';
-import Button from '../../blocks/Button';
 import content from '../../../__tests__/data/content.json';
+
+import NodeList from '../../blocks/NodeList';
+import Node from '../../blocks/Node';
+
+import Ul from '../../elements/Ul';
+import Li from '../../elements/Li';
 
 let wrapper;
 let itemClickFn;
@@ -21,29 +26,26 @@ beforeEach(async () => {
   );
 });
 
-it('should render an li for each item', () => {
-  // add 1 for '../root' item
-  expect(wrapper.find('li').length).toEqual(content.children.length + 1);
+it('should render', () => {
+  expect(wrapper).toBeDefined();
 });
 
-it('should render the `root` directory item first', () => {
-  expect(wrapper.find(Button).first().dive().text()).toEqual('<Arrow />../root');
+it('should render a NodeList', () => {
+  expect(wrapper.find(NodeList)).toBeDefined();
 });
 
-it('should render directories before files', () => {
-  expect(wrapper.find(Button).at(1).dive().text()).toEqual('<Dir />directoryA');
+it('should render a NodeList containing <Ul />\'s', () => {
+  expect(wrapper.find(Ul)).toBeDefined();
 });
 
-it('should render files after directories', () => {
-  expect(wrapper.find('li').at(2).text()).toEqual('<File />fileA');
+it('should render a NodeList containing <Li />\'s', () => {
+  expect(wrapper.find(Li)).toBeDefined();
 });
 
-it('should call `props.onItemClick` when a button is clicked', () => {
-  const button = wrapper.find(Button).first();
-  expect(itemClickFn.mock.calls.length).toEqual(0);
-  button.simulate('click');
-  expect(itemClickFn.mock.calls.length).toEqual(1);
+it('should render a NodeList containing <Node />\'s', () => {
+  expect(wrapper.find(Node)).toBeDefined();
 });
+
 
 afterEach(() => {
   itemClickFn.mockReset();

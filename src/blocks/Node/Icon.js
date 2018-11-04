@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 
 const Icon = styled.div`
-  padding: 2rem;
+  padding: .25rem;
+  align-self: center;
 `;
 
 export default Icon;

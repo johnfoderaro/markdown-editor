@@ -8,8 +8,15 @@ module.exports = {
     use: {
       loader: 'babel-loader',
       options: {
-        presets: ['@babel/preset-env', '@babel/preset-react'],
-        plugins: ['@babel/transform-react-jsx'],
+        presets: [
+          '@babel/preset-env',
+          '@babel/preset-react',
+        ],
+        plugins: [
+          '@babel/transform-react-jsx',
+          '@babel/plugin-syntax-object-rest-spread',
+          'babel-plugin-styled-components',
+        ],
       },
     },
   }, {
