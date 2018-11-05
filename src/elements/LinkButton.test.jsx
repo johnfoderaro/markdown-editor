@@ -1,19 +1,19 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import Button from './Button';
+import LinkButton from './LinkButton';
 
 let tree;
 
 beforeAll(() => {
   tree = shallow(
-    <Button>
+    <LinkButton>
       Test
-    </Button>,
+    </LinkButton>,
   );
 });
 
-describe('<Button />', () => {
+describe('<LinkButton />', () => {
   it('should be defined', () => {
     expect(tree).toBeDefined();
   });

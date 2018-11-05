@@ -8,7 +8,8 @@ let tree;
 beforeAll(() => {
   tree = shallow(
     <Container>
-      <h1>Test</h1>
+      <h1>one</h1>
+      <p>two</p>
     </Container>,
   );
 });
@@ -20,7 +21,8 @@ describe('<Container />', () => {
   it('should render correctly', () => {
     expect(tree).toMatchSnapshot();
   });
-  it('should render a h1', () => {
-    expect(tree.find('h1').text()).toEqual('Test');
+  it('should render children correctly', () => {
+    expect(tree.find('h1').text()).toEqual('one');
+    expect(tree.find('p').text()).toEqual('two');
   });
 });

@@ -26,26 +26,23 @@ beforeEach(async () => {
   );
 });
 
-it('should render', () => {
-  expect(wrapper).toBeDefined();
+describe('<Explorer />', () => {
+  it('should render', () => {
+    expect(wrapper).toBeDefined();
+  });
+  it('should render a NodeList', () => {
+    expect(wrapper.find(NodeList)).toBeDefined();
+  });
+  it('should render a NodeList containing <Ul />\'s', () => {
+    expect(wrapper.find(Ul)).toBeDefined();
+  });
+  it('should render a NodeList containing <Li />\'s', () => {
+    expect(wrapper.find(Li)).toBeDefined();
+  });
+  it('should render a NodeList containing <Node />\'s', () => {
+    expect(wrapper.find(Node)).toBeDefined();
+  });
 });
-
-it('should render a NodeList', () => {
-  expect(wrapper.find(NodeList)).toBeDefined();
-});
-
-it('should render a NodeList containing <Ul />\'s', () => {
-  expect(wrapper.find(Ul)).toBeDefined();
-});
-
-it('should render a NodeList containing <Li />\'s', () => {
-  expect(wrapper.find(Li)).toBeDefined();
-});
-
-it('should render a NodeList containing <Node />\'s', () => {
-  expect(wrapper.find(Node)).toBeDefined();
-});
-
 
 afterEach(() => {
   itemClickFn.mockReset();

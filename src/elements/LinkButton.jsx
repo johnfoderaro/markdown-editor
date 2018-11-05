@@ -3,7 +3,7 @@ import { hot } from 'react-hot-loader';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-const Block = styled.button`
+const StyledButton = styled.button`
   background-color: transparent;
   border: none;
   cursor: pointer;
@@ -18,12 +18,12 @@ const Block = styled.button`
   }
 `;
 
-const Button = ({ children, ...props }) => (
-  <Block {...props}>
+const LinkButton = ({ children, ...props }) => (
+  <StyledButton {...props}>
     {children}
-  </Block>
+  </StyledButton>
 );
 
-Button.propTypes = { children: PropTypes.node.isRequired };
+LinkButton.propTypes = { children: PropTypes.node.isRequired };
 
-export default hot(module)(Button);
+export default hot(module)(LinkButton);

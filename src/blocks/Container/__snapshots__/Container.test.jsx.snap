@@ -5,8 +5,11 @@ ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <Container>
     <h1>
-      Test
+      one
     </h1>
+    <p>
+      two
+    </p>
   </Container>,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -21,22 +24,40 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "function",
     "props": Object {
-      "children": <h1>
-        Test
-      </h1>,
+      "children": Array [
+        <h1>
+          one
+        </h1>,
+        <p>
+          two
+        </p>,
+      ],
     },
     "ref": null,
-    "rendered": Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "host",
-      "props": Object {
-        "children": "Test",
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "one",
+        },
+        "ref": null,
+        "rendered": "one",
+        "type": "h1",
       },
-      "ref": null,
-      "rendered": "Test",
-      "type": "h1",
-    },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "two",
+        },
+        "ref": null,
+        "rendered": "two",
+        "type": "p",
+      },
+    ],
     "type": Object {
       "$$typeof": Symbol(react.forward_ref),
       "attrs": undefined,
@@ -48,6 +69,8 @@ ShallowWrapper {
   padding: .5rem calc(50% - 680px);
   margin-right: 1rem;
   margin-left: 1rem;
+  display: flex;
+  flex-direction: row;
 ",
         ],
       },
@@ -65,22 +88,40 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "function",
       "props": Object {
-        "children": <h1>
-          Test
-        </h1>,
+        "children": Array [
+          <h1>
+            one
+          </h1>,
+          <p>
+            two
+          </p>,
+        ],
       },
       "ref": null,
-      "rendered": Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": "Test",
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "one",
+          },
+          "ref": null,
+          "rendered": "one",
+          "type": "h1",
         },
-        "ref": null,
-        "rendered": "Test",
-        "type": "h1",
-      },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "two",
+          },
+          "ref": null,
+          "rendered": "two",
+          "type": "p",
+        },
+      ],
       "type": Object {
         "$$typeof": Symbol(react.forward_ref),
         "attrs": undefined,
@@ -92,6 +133,8 @@ ShallowWrapper {
   padding: .5rem calc(50% - 680px);
   margin-right: 1rem;
   margin-left: 1rem;
+  display: flex;
+  flex-direction: row;
 ",
           ],
         },

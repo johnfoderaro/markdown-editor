@@ -10,7 +10,7 @@ import File from '../../blocks/File';
 
 import Ul from '../../elements/Ul';
 import Li from '../../elements/Li';
-import Button from '../../elements/Button';
+import LinkButton from '../../elements/LinkButton';
 
 const Explorer = ({ content, onItemClick, onItemKeyPress }) => (
   <NodeList>
@@ -22,14 +22,14 @@ const Explorer = ({ content, onItemClick, onItemKeyPress }) => (
               <Arrow width="20" height="20" />
             </Node.Icon>
             <Node.Name>
-              <Button
+              <LinkButton
                 type="button"
                 onClick={onItemClick}
                 onKeyPress={onItemKeyPress}
                 data-path={content.parent}
               >
                 {`../${content.parent}`}
-              </Button>
+              </LinkButton>
             </Node.Name>
           </Node>
         </Li>
@@ -40,14 +40,14 @@ const Explorer = ({ content, onItemClick, onItemKeyPress }) => (
             <Dir state="open" width="23" height="20" />
           </Node.Icon>
           <Node.Name>
-            {content.data}
+            {content.name}
           </Node.Name>
         </Node>
       </Li>
       <Ul>
         {content.children.map(child => (
           <Li
-            key={child.data}
+            key={child.name}
           >
             {child.type === 'directory' ? (
               <Node>
@@ -55,14 +55,14 @@ const Explorer = ({ content, onItemClick, onItemKeyPress }) => (
                   <Dir state="closed" width="20" height="20" />
                 </Node.Icon>
                 <Node.Name>
-                  <Button
+                  <LinkButton
                     type="button"
                     onClick={onItemClick}
                     onKeyPress={onItemKeyPress}
-                    data-path={child.data}
+                    data-path={child.name}
                   >
-                    {child.data}
-                  </Button>
+                    {child.name}
+                  </LinkButton>
                 </Node.Name>
               </Node>
             ) : (
@@ -71,14 +71,14 @@ const Explorer = ({ content, onItemClick, onItemKeyPress }) => (
                   <File width="20" height="20" />
                 </Node.Icon>
                 <Node.Name>
-                  <Button
+                  <LinkButton
                     type="button"
                     onClick={onItemClick}
                     onKeyPress={onItemKeyPress}
-                    data-path={child.data}
+                    data-path={child.name}
                   >
-                    {child.data}
-                  </Button>
+                    {child.name}
+                  </LinkButton>
                 </Node.Name>
               </Node>
             )}
@@ -91,9 +91,10 @@ const Explorer = ({ content, onItemClick, onItemKeyPress }) => (
 
 Explorer.propTypes = {
   content: PropTypes.shape({
-    data: PropTypes.string.isRequired,
+    name: PropTypes.string,
     parent: PropTypes.string,
     children: PropTypes.array,
+    type: PropTypes.string,
   }).isRequired,
   onItemClick: PropTypes.func.isRequired,
   onItemKeyPress: PropTypes.func.isRequired,

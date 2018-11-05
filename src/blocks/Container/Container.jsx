@@ -7,6 +7,8 @@ const Block = styled.div`
   padding: .5rem calc(50% - 680px);
   margin-right: 1rem;
   margin-left: 1rem;
+  display: flex;
+  flex-direction: row;
 `;
 
 const Container = ({ children }) => (
@@ -16,7 +18,7 @@ const Container = ({ children }) => (
 );
 
 Container.propTypes = {
-  children: PropTypes.element.isRequired,
+  children: PropTypes.arrayOf(PropTypes.element).isRequired,
 };
 
 export default hot(module)(Container);

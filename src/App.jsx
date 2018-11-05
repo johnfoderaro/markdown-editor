@@ -4,6 +4,7 @@ import { createGlobalStyle } from 'styled-components';
 
 import Container from './blocks/Container';
 import Explorer from './components/Explorer';
+import Editor from './components/Editor';
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -32,45 +33,46 @@ class App extends React.Component {
     super(props);
     this.state = {
       content: {
-        data: 'root',
+        name: 'root',
+        type: 'directory',
         parent: null,
         children: [{
-          data: 'directory1',
+          name: 'directory1',
           type: 'directory',
           parent: 'root',
           children: [{
-            data: 'directoryB',
+            name: 'directoryB',
             type: 'directory',
             parent: 'directory1',
             children: [],
           }, {
-            data: 'fileB',
+            name: 'fileB',
             type: 'file',
             parent: 'directory1',
             children: [],
           }, {
-            data: 'fileA',
+            name: 'fileA',
             type: 'file',
             parent: 'directory1',
             children: [],
           }, {
-            data: 'directoryA',
+            name: 'directoryA',
             type: 'directory',
             parent: 'directory1',
             children: [{
-              data: 'fileZ',
+              name: 'fileZ',
               type: 'file',
               parent: 'directoryA',
               children: [],
             }],
           }],
         }, {
-          data: 'file1',
+          name: 'file1',
           type: 'file',
           parent: 'root',
           children: [],
         }, {
-          data: 'file2',
+          name: 'file2',
           type: 'file',
           parent: 'root',
           children: [],
@@ -113,7 +115,7 @@ class App extends React.Component {
     // could be useful for other sort scenarios
     // alphabetical, reverse alphabetical, time ascending/descending etc
     const sortChildren = ({ children, ...items }) => ({
-      children: children.sort((a, b) => (a.data > b.data ? 1 : -1)),
+      children: children.sort((a, b) => (a.name > b.name ? 1 : -1)),
       ...items,
     });
     const nodeQueue = queue();
@@ -123,7 +125,7 @@ class App extends React.Component {
       for (let n = 0; n < current.children.length; n += 1) {
         nodeQueue.enqueue(current.children[n]);
       }
-      if (current.data === currentPath) {
+      if (current.name === currentPath) {
         break;
       }
       current = nodeQueue.dequeue();
@@ -141,6 +143,9 @@ class App extends React.Component {
             content={this.traverse(currentPath)}
             onItemClick={this.handleItemClick}
             onItemKeyPress={this.handleItemKeyPress}
+          />
+          <Editor
+            data={currentPath}
           />
         </Container>
       </>
