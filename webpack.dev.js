@@ -18,4 +18,9 @@ module.exports = {
       ...rules,
     ],
   },
+  devServer: {
+    proxy: {
+      '/filesystem/*': 'http://localhost:3000',
+    },
+  },
 };

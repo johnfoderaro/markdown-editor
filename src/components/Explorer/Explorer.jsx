@@ -49,7 +49,7 @@ const Explorer = ({ content, onItemClick, onItemKeyPress }) => (
           <Li
             key={child.name}
           >
-            {child.type === 'directory' ? (
+            {child.type === 'dir' ? (
               <Node>
                 <Node.Icon>
                   <Dir state="closed" width="20" height="20" />
