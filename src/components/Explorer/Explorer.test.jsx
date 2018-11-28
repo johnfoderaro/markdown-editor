@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 
 import Explorer from './Explorer';
-import content from '../../../__tests__/data/content.json';
+import content from '../../../__mocks__/data/filesystem/get/data.json';
 
 import NodeList from '../../blocks/NodeList';
 import Node from '../../blocks/Node';

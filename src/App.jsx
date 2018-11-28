@@ -36,6 +36,7 @@ class App extends React.Component {
       ready: false,
       content: null,
       currentPath: 'root',
+      error: false,
     };
     this.handleItemClick = this.handleItemClick.bind(this);
     this.handleItemKeyPress = this.handleItemKeyPress.bind(this);
@@ -44,10 +45,10 @@ class App extends React.Component {
 
   async componentDidMount() {
     try {
-      const { data } = await axios.get('/filesystem/get');
+      const { data } = await axios.get('/filesystem/get/');
       this.setState(() => ({ content: data, ready: true }));
     } catch (error) {
-      console.error(error);
+      this.setState(() => ({ error }));
     }
   }
 
@@ -100,8 +101,8 @@ class App extends React.Component {
   }
 
   render() {
-    const { currentPath, ready } = this.state;
-    return ready && (
+    const { currentPath, ready, error } = this.state;
+    return ready && !error && (
       <>
         <GlobalStyle />
         <Container>
