@@ -6,9 +6,7 @@ import Text from '../../blocks/Text';
 
 const Editor = ({ data }) => (
   <Text>
-    <Text.Content>
-      {data}
-    </Text.Content>
+    <Text.Content value={data} />
   </Text>
 );
 

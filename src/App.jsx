@@ -36,6 +36,7 @@ class App extends React.Component {
       ready: false,
       content: null,
       currentPath: 'root',
+      fileSystem: '/filesystem/get/',
       error: false,
     };
     this.handleItemClick = this.handleItemClick.bind(this);
@@ -44,8 +45,9 @@ class App extends React.Component {
   }
 
   async componentDidMount() {
+    const { fileSystem } = this.state;
     try {
-      const { data } = await axios.get('/filesystem/get/');
+      const { data } = await axios.get(fileSystem);
       this.setState(() => ({ content: data, ready: true }));
     } catch (error) {
       this.setState(() => ({ error }));
@@ -55,6 +57,7 @@ class App extends React.Component {
   handleItemClick(event) {
     event.preventDefault();
     const { path } = event.target.dataset;
+    // TODO get file contents. ignore dir
     this.setState(() => ({ currentPath: path }));
   }
 
@@ -101,7 +104,7 @@ class App extends React.Component {
   }
 
   render() {
-    const { currentPath, ready, error } = this.state;
+    const { currentPath, error, ready } = this.state;
     return ready && !error && (
       <>
         <GlobalStyle />
