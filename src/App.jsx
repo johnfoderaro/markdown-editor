@@ -34,9 +34,8 @@ class App extends React.Component {
     super(props);
     this.state = {
       ready: false,
-      content: null,
+      data: null,
       currentPath: 'root',
-      fileSystem: '/filesystem/get/',
       error: false,
     };
     this.handleItemClick = this.handleItemClick.bind(this);
@@ -45,12 +44,11 @@ class App extends React.Component {
   }
 
   async componentDidMount() {
-    const { fileSystem } = this.state;
     try {
-      const { data } = await axios.get(fileSystem);
-      this.setState(() => ({ content: data, ready: true }));
+      const { data } = await axios.get('/filesystem/get/');
+      this.setState(() => ({ data, ready: true }));
     } catch (error) {
-      this.setState(() => ({ error }));
+      this.setState(() => ({ error, ready: false }));
     }
   }
 
@@ -69,7 +67,7 @@ class App extends React.Component {
 
   traverse(currentPath) {
     let current;
-    const { content } = this.state;
+    const { data } = this.state;
     const queue = () => {
       const items = [];
       return {
@@ -89,7 +87,7 @@ class App extends React.Component {
       ...items,
     });
     const nodeQueue = queue();
-    nodeQueue.enqueue(content);
+    nodeQueue.enqueue(data);
     current = nodeQueue.dequeue();
     while (current) {
       for (let n = 0; n < current.children.length; n += 1) {
