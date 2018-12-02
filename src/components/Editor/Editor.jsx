@@ -4,14 +4,17 @@ import { hot } from 'react-hot-loader';
 
 import Text from '../../blocks/Text';
 
-const Editor = ({ data }) => (
+const Editor = ({ file }) => (
   <Text>
-    <Text.Content value={data} />
+    <Text.Content defaultValue={file} value={file} />
   </Text>
 );
 
 Editor.propTypes = {
-  data: PropTypes.string.isRequired,
+  file: PropTypes.string,
 };
 
+Editor.defaultProps = {
+  file: PropTypes.string,
+};
 export default hot(module)(Editor);

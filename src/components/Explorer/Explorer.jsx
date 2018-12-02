@@ -12,7 +12,7 @@ import Ul from '../../elements/Ul';
 import Li from '../../elements/Li';
 import LinkButton from '../../elements/LinkButton';
 
-const Explorer = ({ content, onItemClick, onItemKeyPress }) => (
+const Explorer = ({ content, onItemSelect }) => (
   <NodeList>
     <Ul>
       {content.parent && (
@@ -24,9 +24,10 @@ const Explorer = ({ content, onItemClick, onItemKeyPress }) => (
             <Node.Name>
               <LinkButton
                 type="button"
-                onClick={onItemClick}
-                onKeyPress={onItemKeyPress}
+                onClick={onItemSelect}
+                onKeyPress={onItemSelect}
                 data-path={content.parent}
+                data-type={content.type}
               >
                 {`../${content.parent}`}
               </LinkButton>
@@ -57,9 +58,10 @@ const Explorer = ({ content, onItemClick, onItemKeyPress }) => (
                 <Node.Name>
                   <LinkButton
                     type="button"
-                    onClick={onItemClick}
-                    onKeyPress={onItemKeyPress}
+                    onClick={onItemSelect}
+                    onKeyPress={onItemSelect}
                     data-path={child.name}
+                    data-type={child.type}
                   >
                     {child.name}
                   </LinkButton>
@@ -73,9 +75,11 @@ const Explorer = ({ content, onItemClick, onItemKeyPress }) => (
                 <Node.Name>
                   <LinkButton
                     type="button"
-                    onClick={onItemClick}
-                    onKeyPress={onItemKeyPress}
+                    onClick={onItemSelect}
+                    onKeyPress={onItemSelect}
                     data-path={child.name}
+                    data-type={child.type}
+                    data-id={child.id}
                   >
                     {child.name}
                   </LinkButton>
@@ -96,8 +100,7 @@ Explorer.propTypes = {
     children: PropTypes.array,
     type: PropTypes.string,
   }).isRequired,
-  onItemClick: PropTypes.func.isRequired,
-  onItemKeyPress: PropTypes.func.isRequired,
+  onItemSelect: PropTypes.func.isRequired,
 };
 
 export default hot(module)(Explorer);

@@ -12,22 +12,32 @@ let eventFn;
 jest.mock('axios');
 
 describe('App', () => {
-  describe('event listeners', () => {
+  describe('event listener file select', () => {
     beforeEach(() => {
       wrapper = shallow(<App />);
       instance = wrapper.instance();
       eventFn = Object.assign(jest.fn(), {
         preventDefault: () => {},
-        target: { dataset: { path: 'root' } },
+        target: { dataset: { path: 'file01', id: '100', type: 'file' } },
       });
     });
-    it('should handle item clicks', () => {
-      instance.handleItemClick(eventFn);
-      expect(instance.state.currentPath).toEqual('root');
+    it('should handle item selecting', () => {
+      instance.handleItemSelect(eventFn);
+      expect(instance.state.file).toEqual('100');
     });
-    it('should handle item key presses', () => {
-      instance.handleItemKeyPress(eventFn);
-      expect(instance.state.currentPath).toEqual('root');
+  });
+  describe('event listener dir select', () => {
+    beforeEach(() => {
+      wrapper = shallow(<App />);
+      instance = wrapper.instance();
+      eventFn = Object.assign(jest.fn(), {
+        preventDefault: () => {},
+        target: { dataset: { path: 'root', type: 'dir' } },
+      });
+    });
+    it('should handle item selecting', () => {
+      instance.handleItemSelect(eventFn);
+      expect(instance.state.path).toEqual('root');
     });
   });
   describe('successful API calls', () => {

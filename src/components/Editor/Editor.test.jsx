@@ -10,7 +10,7 @@ let text;
 
 beforeAll(() => {
   text = 'Hello, world!';
-  wrapper = shallow(<Editor data={text} />);
+  wrapper = shallow(<Editor file={text} />);
 });
 
 describe('<Editor />', () => {

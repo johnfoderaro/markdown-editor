@@ -35,11 +35,11 @@ class App extends React.Component {
     this.state = {
       ready: false,
       data: null,
-      currentPath: 'root',
+      file: 'Edit your text here...',
+      path: 'root',
       error: false,
     };
-    this.handleItemClick = this.handleItemClick.bind(this);
-    this.handleItemKeyPress = this.handleItemKeyPress.bind(this);
+    this.handleItemSelect = this.handleItemSelect.bind(this);
     this.traverse = this.traverse.bind(this);
   }
 
@@ -52,20 +52,23 @@ class App extends React.Component {
     }
   }
 
-  handleItemClick(event) {
+  async handleItemSelect(event) {
     event.preventDefault();
-    const { path } = event.target.dataset;
-    // TODO get file contents. ignore dir
-    this.setState(() => ({ currentPath: path }));
+    const { id, path, type } = event.target.dataset;
+    if (type === 'dir') {
+      this.setState(() => ({ path }));
+    }
+    if (type === 'file') {
+      try {
+        const { data } = await axios.get(`/file/get/${id}`);
+        this.setState(() => ({ file: data }));
+      } catch (error) {
+        this.setState(() => ({ error, ready: false }));
+      }
+    }
   }
 
-  handleItemKeyPress(event) {
-    event.preventDefault();
-    const { path } = event.target.dataset;
-    this.setState(() => ({ currentPath: path }));
-  }
-
-  traverse(currentPath) {
+  traverse(path) {
     let current;
     const { data } = this.state;
     const queue = () => {
@@ -93,7 +96,7 @@ class App extends React.Component {
       for (let n = 0; n < current.children.length; n += 1) {
         nodeQueue.enqueue(current.children[n]);
       }
-      if (current.name === currentPath) {
+      if (current.name === path) {
         break;
       }
       current = nodeQueue.dequeue();
@@ -102,18 +105,22 @@ class App extends React.Component {
   }
 
   render() {
-    const { currentPath, error, ready } = this.state;
+    const {
+      path,
+      error,
+      ready,
+      file: { data },
+    } = this.state;
     return ready && !error && (
       <>
         <GlobalStyle />
         <Container>
           <Explorer
-            content={this.traverse(currentPath)}
-            onItemClick={this.handleItemClick}
-            onItemKeyPress={this.handleItemKeyPress}
+            content={this.traverse(path)}
+            onItemSelect={this.handleItemSelect}
           />
           <Editor
-            data={currentPath}
+            file={data}
           />
         </Container>
       </>

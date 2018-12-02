@@ -11,17 +11,14 @@ import Ul from '../../elements/Ul';
 import Li from '../../elements/Li';
 
 let wrapper;
-let itemClickFn;
-let itemKeyPressFn;
+let onItemSelect;
 
 beforeEach(async () => {
-  itemClickFn = jest.fn();
-  itemKeyPressFn = jest.fn();
+  onItemSelect = jest.fn();
   wrapper = shallow(
     <Explorer
       content={content.children[0]}
-      onItemClick={itemClickFn}
-      onItemKeyPress={itemKeyPressFn}
+      onItemSelect={onItemSelect}
     />,
   );
 });
@@ -45,6 +42,5 @@ describe('<Explorer />', () => {
 });
 
 afterEach(() => {
-  itemClickFn.mockReset();
-  itemKeyPressFn.mockReset();
+  onItemSelect.mockReset();
 });

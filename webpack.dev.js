@@ -20,6 +20,7 @@ module.exports = {
   },
   devServer: {
     proxy: {
+      '/file/*': 'http://localhost:3000',
       '/filesystem/*': 'http://localhost:3000',
     },
   },
