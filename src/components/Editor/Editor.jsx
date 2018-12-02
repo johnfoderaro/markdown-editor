@@ -6,7 +6,7 @@ import Text from '../../blocks/Text';
 
 const Editor = ({ file }) => (
   <Text>
-    <Text.Content defaultValue={file} value={file} />
+    <Text.Content placeholder="Edit your text here..." value={file} />
   </Text>
 );
 

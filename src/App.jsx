@@ -60,7 +60,7 @@ class App extends React.Component {
     }
     if (type === 'file') {
       try {
-        const { data } = await axios.get(`/file/get/${id}`);
+        const { data } = await axios.get(`/file/get/${id}/`);
         this.setState(() => ({ file: data }));
       } catch (error) {
         this.setState(() => ({ error, ready: false }));
