@@ -1,6 +1,9 @@
 # Markdown Editor
 
-Markdown editor that consumes a REST API for creating, editing and deleting markdown content.
+Markdown editor that consumes a REST API for creating, editing and deleting markdown content. The View layer for [markdown-api's](https://github.com/johnfoderaro/markdown-api) Model-Controller RESTful application with Express and MongoDB. 
+
+### Editor
+![editor](/screenshots/editor.png?raw=true)
 
 ## Getting started
 

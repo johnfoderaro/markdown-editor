@@ -2,16 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { hot } from 'react-hot-loader';
 
-import Action from '../Action';
-import Text from '../../blocks/Text';
+// import Text from '../../blocks/Text';
+import ButtonGroup from '../../blocks/ButtonGroup';
 
 const Editor = ({ file }) => (
-  <>
-    {/* <Action /> */}
-    <Text>
-      <Text.Content placeholder="Edit your text here..." value={file} />
-    </Text>
-  </>
+  <ButtonGroup />
 );
 
 Editor.propTypes = {
