@@ -7,7 +7,7 @@ let tree;
 
 beforeAll(() => {
   tree = shallow(
-    <Button>
+    <Button type="new">
       Test
     </Button>,
   );

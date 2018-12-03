@@ -3,7 +3,9 @@
 exports[`<Button /> should render correctly 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <Button>
+  Symbol(enzyme.__unrendered__): <Button
+    type="new"
+  >
     Test
   </Button>,
   Symbol(enzyme.__renderer__): Object {
@@ -20,6 +22,7 @@ ShallowWrapper {
     "nodeType": "function",
     "props": Object {
       "children": "Test",
+      "type": "new",
     },
     "ref": null,
     "rendered": "Test",
@@ -31,18 +34,6 @@ ShallowWrapper {
         "isStatic": true,
         "rules": Array [
           "
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  font: inherit;
-  text-decoration: underline;
-  display: inline;
-  margin: 0;
-  padding: 0;
-  &:hover,
-  &:focus {
-    text-decoration: none;
-  }
 ",
         ],
       },
@@ -61,6 +52,7 @@ ShallowWrapper {
       "nodeType": "function",
       "props": Object {
         "children": "Test",
+        "type": "new",
       },
       "ref": null,
       "rendered": "Test",
@@ -72,18 +64,6 @@ ShallowWrapper {
           "isStatic": true,
           "rules": Array [
             "
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  font: inherit;
-  text-decoration: underline;
-  display: inline;
-  margin: 0;
-  padding: 0;
-  &:hover,
-  &:focus {
-    text-decoration: none;
-  }
 ",
           ],
         },

@@ -1,11 +1,10 @@
-import React from 'react';
-import { hot } from 'react-hot-loader';
-import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-const StyledButton = styled.button`
-  margin-top: 1rem;
-  margin-right: ${({ type }) => {
+import Button from '../../elements/Button';
+
+const StyledButton = styled(Button)`
+  .editor .action-button.save {
+    margin-right: ${({ type }) => {
     switch (type) {
       case 'new':
         return '.5rem';
@@ -15,8 +14,7 @@ const StyledButton = styled.button`
         return '0';
     }
   }};
-  margin-bottom: 1rem;
-  margin-left: ${({ type }) => {
+    margin-left: ${({ type }) => {
     switch (type) {
       case 'delete':
         return '.5rem';
@@ -24,14 +22,7 @@ const StyledButton = styled.button`
         return '0';
     }
   }};
-  height: 3rem;
-  width: 6rem;
-  background: none;
-  border: none;
-  border-radius: .5rem;
-  font-size: 1.25em;
-  cursor: pointer;
-  border: 2px solid ${({ type }) => {
+    border: 2px solid ${({ type }) => {
     switch (type) {
       case 'new':
         return 'rgb(25, 105, 179)';
@@ -43,9 +34,9 @@ const StyledButton = styled.button`
         return '#eee';
     }
   }};
-  &:hover {
-    border: none;
-    background: ${({ type }) => {
+    &:hover {
+      border: none;
+      background: ${({ type }) => {
     switch (type) {
       case 'new':
         return 'rgb(25, 105, 179)';
@@ -57,19 +48,9 @@ const StyledButton = styled.button`
         return '#eee';
     }
   }};
-    color: rgb(255, 255, 255);
+      color: rgb(255, 255, 255);
+    }
   }
 `;
 
-const Button = ({ children, type, ...props }) => (
-  <StyledButton {...props} type={type}>
-    {children}
-  </StyledButton>
-);
-
-Button.propTypes = {
-  children: PropTypes.node.isRequired,
-  type: PropTypes.string.isRequired,
-};
-
-export default hot(module)(Button);
+export default StyledButton;
