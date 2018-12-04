@@ -3,10 +3,13 @@ import { hot } from 'react-hot-loader';
 import { createGlobalStyle } from 'styled-components';
 import axios from 'axios';
 
+import Action from './blocks/Action';
 import Container from './blocks/Container';
+import Overlay from './blocks/Overlay';
+import Message from './blocks/Message';
+
 import Explorer from './components/Explorer';
 import Editor from './components/Editor';
-
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -14,7 +17,9 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
   }
+  html { height: 100%; }
   body {
+    height: 100%;
     font-size: 18px;
     font-family: 
       -apple-system,
@@ -115,6 +120,15 @@ class App extends React.Component {
     return ready && !error && (
       <>
         <GlobalStyle />
+        {/* <Overlay>
+          <Message>
+            <Message.Svg type="loader" />
+            <Message.Text>Some Error</Message.Text>
+            <Action type="overlay">
+              <Action.Button type="inverse">Ok</Action.Button>
+            </Action>
+          </Message>
+        </Overlay> */}
         <Container>
           <Explorer
             content={this.traverse(path)}

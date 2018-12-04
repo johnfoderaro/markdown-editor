@@ -28,14 +28,12 @@ ShallowWrapper {
           "isStatic": true,
           "rules": Array [
             "
-  padding: 1rem;
-  margin-right: auto;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
   display: flex;
   flex-direction: column;
-  width: 33%;
-  height: 30rem;
-  border: 1px solid #000;
-  border-radius: .5rem;
 ",
           ],
         },
@@ -68,14 +66,12 @@ ShallowWrapper {
             "isStatic": true,
             "rules": Array [
               "
-  padding: 1rem;
-  margin-right: auto;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
   display: flex;
   flex-direction: column;
-  width: 33%;
-  height: 30rem;
-  border: 1px solid #000;
-  border-radius: .5rem;
 ",
             ],
           },

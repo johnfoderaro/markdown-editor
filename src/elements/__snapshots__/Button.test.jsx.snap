@@ -34,6 +34,16 @@ ShallowWrapper {
         "isStatic": true,
         "rules": Array [
           "
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  height: 3rem;
+  width: 6rem;
+  background: none;
+  border: none;
+  border-radius: .5rem;
+  font-size: 1.25em;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
 ",
         ],
       },
@@ -64,6 +74,16 @@ ShallowWrapper {
           "isStatic": true,
           "rules": Array [
             "
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  height: 3rem;
+  width: 6rem;
+  background: none;
+  border: none;
+  border-radius: .5rem;
+  font-size: 1.25em;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
 ",
           ],
         },

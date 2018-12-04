@@ -4,9 +4,8 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const Block = styled.div`
-  padding: .5rem calc(50% - 680px);
-  margin-right: 1rem;
-  margin-left: 1rem;
+  height: 100%;
+  min-height: 100%;
   display: flex;
   flex-direction: row;
 `;

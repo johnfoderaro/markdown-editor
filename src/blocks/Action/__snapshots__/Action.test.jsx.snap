@@ -3,7 +3,7 @@
 exports[`<Action /> should render correctly 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <ForwardRef>
+  Symbol(enzyme.__unrendered__): <Action>
     <ForwardRef
       type="new"
     >
@@ -19,7 +19,7 @@ ShallowWrapper {
     >
       Delete
     </ForwardRef>
-  </ForwardRef>,
+  </Action>,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],
@@ -31,7 +31,7 @@ ShallowWrapper {
   Symbol(enzyme.__node__): Object {
     "instance": null,
     "key": undefined,
-    "nodeType": "class",
+    "nodeType": "function",
     "props": Object {
       "children": Array [
         <ForwardRef
@@ -50,66 +50,7 @@ ShallowWrapper {
           Delete
         </ForwardRef>,
       ],
-      "forwardedClass": Object {
-        "$$typeof": Symbol(react.forward_ref),
-        "Button": Object {
-          "$$typeof": Symbol(react.forward_ref),
-          "attrs": undefined,
-          "componentStyle": ComponentStyle {
-            "componentId": "sc-bwzfXH",
-            "isStatic": false,
-            "rules": Array [
-              "
-  .editor .action-button.save {
-    margin-right: ",
-              [Function],
-              ";
-    margin-left: ",
-              [Function],
-              ";
-    border: 2px solid ",
-              [Function],
-              ";
-    &:hover {
-      border: none;
-      background: ",
-              [Function],
-              ";
-      color: rgb(255, 255, 255);
-    }
-  }
-",
-            ],
-          },
-          "displayName": "Styled(Button)",
-          "render": [Function],
-          "styledComponentId": "sc-bwzfXH",
-          "target": [Function],
-          "warnTooManyClasses": [Function],
-          "withComponent": [Function],
-          Symbol(Symbol.hasInstance): [Function],
-        },
-        "attrs": undefined,
-        "componentStyle": ComponentStyle {
-          "componentId": "sc-htpNat",
-          "isStatic": true,
-          "rules": Array [
-            "
-  margin-top: auto;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-",
-          ],
-        },
-        "displayName": "styled.div",
-        "render": [Function],
-        "styledComponentId": "sc-htpNat",
-        "target": "div",
-        "warnTooManyClasses": [Function],
-        "withComponent": [Function],
-      },
-      "forwardedRef": null,
+      "type": undefined,
     },
     "ref": null,
     "rendered": Array [
@@ -131,14 +72,16 @@ ShallowWrapper {
             "isStatic": false,
             "rules": Array [
               "
-  .editor .action-button.save {
-    margin-right: ",
+  color: ",
               [Function],
               ";
-    margin-left: ",
+  margin-right: ",
               [Function],
               ";
-    border: 2px solid ",
+  margin-left: ",
+              [Function],
+              ";
+  border: 2px solid ",
               [Function],
               ";
     &:hover {
@@ -146,8 +89,9 @@ ShallowWrapper {
       background: ",
               [Function],
               ";
-      color: rgb(255, 255, 255);
-    }
+    color: ",
+              [Function],
+              ";
   }
 ",
             ],
@@ -179,14 +123,16 @@ ShallowWrapper {
             "isStatic": false,
             "rules": Array [
               "
-  .editor .action-button.save {
-    margin-right: ",
+  color: ",
               [Function],
               ";
-    margin-left: ",
+  margin-right: ",
               [Function],
               ";
-    border: 2px solid ",
+  margin-left: ",
+              [Function],
+              ";
+  border: 2px solid ",
               [Function],
               ";
     &:hover {
@@ -194,8 +140,9 @@ ShallowWrapper {
       background: ",
               [Function],
               ";
-      color: rgb(255, 255, 255);
-    }
+    color: ",
+              [Function],
+              ";
   }
 ",
             ],
@@ -227,14 +174,16 @@ ShallowWrapper {
             "isStatic": false,
             "rules": Array [
               "
-  .editor .action-button.save {
-    margin-right: ",
+  color: ",
               [Function],
               ";
-    margin-left: ",
+  margin-right: ",
               [Function],
               ";
-    border: 2px solid ",
+  margin-left: ",
+              [Function],
+              ";
+  border: 2px solid ",
               [Function],
               ";
     &:hover {
@@ -242,8 +191,9 @@ ShallowWrapper {
       background: ",
               [Function],
               ";
-      color: rgb(255, 255, 255);
-    }
+    color: ",
+              [Function],
+              ";
   }
 ",
             ],
@@ -258,13 +208,36 @@ ShallowWrapper {
         },
       },
     ],
-    "type": [Function],
+    "type": Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "attrs": undefined,
+      "componentStyle": ComponentStyle {
+        "componentId": "sc-htpNat",
+        "isStatic": false,
+        "rules": Array [
+          "
+  margin-top: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: ",
+          [Function],
+          ";
+",
+        ],
+      },
+      "displayName": "styled.div",
+      "render": [Function],
+      "styledComponentId": "sc-htpNat",
+      "target": "div",
+      "warnTooManyClasses": [Function],
+      "withComponent": [Function],
+    },
   },
   Symbol(enzyme.__nodes__): Array [
     Object {
       "instance": null,
       "key": undefined,
-      "nodeType": "class",
+      "nodeType": "function",
       "props": Object {
         "children": Array [
           <ForwardRef
@@ -283,66 +256,7 @@ ShallowWrapper {
             Delete
           </ForwardRef>,
         ],
-        "forwardedClass": Object {
-          "$$typeof": Symbol(react.forward_ref),
-          "Button": Object {
-            "$$typeof": Symbol(react.forward_ref),
-            "attrs": undefined,
-            "componentStyle": ComponentStyle {
-              "componentId": "sc-bwzfXH",
-              "isStatic": false,
-              "rules": Array [
-                "
-  .editor .action-button.save {
-    margin-right: ",
-                [Function],
-                ";
-    margin-left: ",
-                [Function],
-                ";
-    border: 2px solid ",
-                [Function],
-                ";
-    &:hover {
-      border: none;
-      background: ",
-                [Function],
-                ";
-      color: rgb(255, 255, 255);
-    }
-  }
-",
-              ],
-            },
-            "displayName": "Styled(Button)",
-            "render": [Function],
-            "styledComponentId": "sc-bwzfXH",
-            "target": [Function],
-            "warnTooManyClasses": [Function],
-            "withComponent": [Function],
-            Symbol(Symbol.hasInstance): [Function],
-          },
-          "attrs": undefined,
-          "componentStyle": ComponentStyle {
-            "componentId": "sc-htpNat",
-            "isStatic": true,
-            "rules": Array [
-              "
-  margin-top: auto;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-",
-            ],
-          },
-          "displayName": "styled.div",
-          "render": [Function],
-          "styledComponentId": "sc-htpNat",
-          "target": "div",
-          "warnTooManyClasses": [Function],
-          "withComponent": [Function],
-        },
-        "forwardedRef": null,
+        "type": undefined,
       },
       "ref": null,
       "rendered": Array [
@@ -364,14 +278,16 @@ ShallowWrapper {
               "isStatic": false,
               "rules": Array [
                 "
-  .editor .action-button.save {
-    margin-right: ",
+  color: ",
                 [Function],
                 ";
-    margin-left: ",
+  margin-right: ",
                 [Function],
                 ";
-    border: 2px solid ",
+  margin-left: ",
+                [Function],
+                ";
+  border: 2px solid ",
                 [Function],
                 ";
     &:hover {
@@ -379,8 +295,9 @@ ShallowWrapper {
       background: ",
                 [Function],
                 ";
-      color: rgb(255, 255, 255);
-    }
+    color: ",
+                [Function],
+                ";
   }
 ",
               ],
@@ -412,14 +329,16 @@ ShallowWrapper {
               "isStatic": false,
               "rules": Array [
                 "
-  .editor .action-button.save {
-    margin-right: ",
+  color: ",
                 [Function],
                 ";
-    margin-left: ",
+  margin-right: ",
                 [Function],
                 ";
-    border: 2px solid ",
+  margin-left: ",
+                [Function],
+                ";
+  border: 2px solid ",
                 [Function],
                 ";
     &:hover {
@@ -427,8 +346,9 @@ ShallowWrapper {
       background: ",
                 [Function],
                 ";
-      color: rgb(255, 255, 255);
-    }
+    color: ",
+                [Function],
+                ";
   }
 ",
               ],
@@ -460,14 +380,16 @@ ShallowWrapper {
               "isStatic": false,
               "rules": Array [
                 "
-  .editor .action-button.save {
-    margin-right: ",
+  color: ",
                 [Function],
                 ";
-    margin-left: ",
+  margin-right: ",
                 [Function],
                 ";
-    border: 2px solid ",
+  margin-left: ",
+                [Function],
+                ";
+  border: 2px solid ",
                 [Function],
                 ";
     &:hover {
@@ -475,8 +397,9 @@ ShallowWrapper {
       background: ",
                 [Function],
                 ";
-      color: rgb(255, 255, 255);
-    }
+    color: ",
+                [Function],
+                ";
   }
 ",
               ],
@@ -491,7 +414,30 @@ ShallowWrapper {
           },
         },
       ],
-      "type": [Function],
+      "type": Object {
+        "$$typeof": Symbol(react.forward_ref),
+        "attrs": undefined,
+        "componentStyle": ComponentStyle {
+          "componentId": "sc-htpNat",
+          "isStatic": false,
+          "rules": Array [
+            "
+  margin-top: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: ",
+            [Function],
+            ";
+",
+          ],
+        },
+        "displayName": "styled.div",
+        "render": [Function],
+        "styledComponentId": "sc-htpNat",
+        "target": "div",
+        "warnTooManyClasses": [Function],
+        "withComponent": [Function],
+      },
     },
   ],
   Symbol(enzyme.__options__): Object {
