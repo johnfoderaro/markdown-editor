@@ -25,6 +25,9 @@
       "json",
       "jsx"
     ],
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ],
     "setupTestFrameworkScriptFile": "<rootDir>__tests__/setup/setupEnzyme.js",
     "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(js|jsx)$"
   },
@@ -49,7 +52,9 @@
     "babel-loader": "^8.0.4",
     "babel-plugin-styled-components": "^1.8.0",
     "clean-webpack-plugin": "^0.1.19",
+    "enzyme-to-json": "^3.3.5",
     "html-webpack-plugin": "^3.2.0",
+    "jest-styled-components": "^6.3.1",
     "prop-types": "^15.6.2",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",

@@ -6,11 +6,11 @@ import Panel from '../../blocks/Panel';
 import Action from '../../blocks/Action';
 import Text from '../../blocks/Text';
 
-const Editor = ({ file }) => (
+const Editor = ({ name, data }) => (
   <Panel type="editor">
     <Text>
-      <Text.Name value="untitled.md" />
-      <Text.Content placeholder="Edit your text here..." value={file} />
+      <Text.Name placeholder="untitled.md" value={name} />
+      <Text.Content placeholder="&quot;The first draft is just you telling yourself the story.&quot;" value={data} />
     </Text>
     <Action type="editor">
       <Action.Button type="save">Save</Action.Button>
@@ -20,10 +20,12 @@ const Editor = ({ file }) => (
 );
 
 Editor.propTypes = {
-  file: PropTypes.string,
+  name: PropTypes.string,
+  data: PropTypes.string,
 };
 
 Editor.defaultProps = {
-  file: PropTypes.string,
+  name: PropTypes.string,
+  data: PropTypes.string,
 };
 export default hot(module)(Editor);

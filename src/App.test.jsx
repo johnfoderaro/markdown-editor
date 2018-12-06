@@ -19,7 +19,7 @@ describe('App', () => {
         return { data: fileSystemGet };
       }
       if (path === '/file/get/100/') {
-        return { data: 'file 100 data' };
+        return { name: '100.md', data: 'file 100 data' };
       }
       return new Error();
     });
@@ -67,4 +67,5 @@ describe('App', () => {
     });
     afterEach(() => axios.get.mockReset());
   });
+  afterEach(() => axios.get.mockReset());
 });

@@ -1,15 +1,18 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { mount } from 'enzyme';
+import 'jest-styled-components';
 
 import Message from './Message';
 
 let tree;
 
 beforeAll(() => {
-  tree = shallow(
+  tree = mount(
     <Message>
-      <h1>one</h1>
-      <p>two</p>
+      <Message.Error />
+      <Message.Warning />
+      <Message.Success />
+      <Message.Loader />
     </Message>,
   );
 });
@@ -21,8 +24,10 @@ describe('<Message />', () => {
   it('should render correctly', () => {
     expect(tree).toMatchSnapshot();
   });
-  it('should render children correctly', () => {
-    expect(tree.find('h1').text()).toEqual('one');
-    expect(tree.find('p').text()).toEqual('two');
+  it('should render svg icons correctly', () => {
+    expect(tree.find(Message.Error)).toBeDefined();
+    expect(tree.find(Message.Warning)).toBeDefined();
+    expect(tree.find(Message.Success)).toBeDefined();
+    expect(tree.find(Message.Loader)).toBeDefined();
   });
 });

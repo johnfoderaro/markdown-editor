@@ -15,10 +15,8 @@ const Block = styled.div`
         return 'flex-start';
       case 'editor':
         return 'flex-end';
-      case 'overlay':
-        return 'center';
       default:
-        return 'inherit';
+        return 'center';
     }
   }};
 `;
@@ -33,7 +31,10 @@ Action.Button = Button;
 
 Action.propTypes = {
   type: PropTypes.string.isRequired,
-  children: PropTypes.arrayOf(PropTypes.element).isRequired,
+  children: PropTypes.oneOfType([
+    PropTypes.node,
+    PropTypes.element,
+  ]).isRequired,
 };
 
 

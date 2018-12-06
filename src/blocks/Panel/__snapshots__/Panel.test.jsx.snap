@@ -1,184 +1,159 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Panel /> should render correctly 1`] = `
-ShallowWrapper {
-  Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <Panel>
-    <h1>
-      one
-    </h1>
-    <p>
-      two
-    </p>
-  </Panel>,
-  Symbol(enzyme.__renderer__): Object {
-    "batchedUpdates": [Function],
-    "getNode": [Function],
-    "render": [Function],
-    "simulateError": [Function],
-    "simulateEvent": [Function],
-    "unmount": [Function],
-  },
-  Symbol(enzyme.__node__): Object {
-    "instance": null,
-    "key": undefined,
-    "nodeType": "function",
-    "props": Object {
-      "children": Array [
+.c0 {
+  padding-right: 1rem;
+  padding-left: 1rem;
+  height: 100%;
+  width: 80%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  background: #fff;
+}
+
+<Panel
+  type="editor"
+>
+  <Block
+    type="editor"
+  >
+    <StyledComponent
+      forwardedClass={
+        Object {
+          "$$typeof": Symbol(react.forward_ref),
+          "attrs": undefined,
+          "componentStyle": ComponentStyle {
+            "componentId": "sc-bdVaJa",
+            "isStatic": false,
+            "lastClassName": "c0",
+            "rules": Array [
+              "
+  padding-right: 1rem;
+  padding-left: 1rem;
+  height: 100%;
+  width: ",
+              [Function],
+              ";
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: ",
+              [Function],
+              ";
+",
+            ],
+          },
+          "displayName": "Block",
+          "render": [Function],
+          "styledComponentId": "sc-bdVaJa",
+          "target": "div",
+          "warnTooManyClasses": [Function],
+          "withComponent": [Function],
+        }
+      }
+      forwardedRef={null}
+      type="editor"
+    >
+      <div
+        className="c0"
+        type="editor"
+      >
         <h1>
           one
-        </h1>,
+        </h1>
         <p>
           two
-        </p>,
-      ],
-      "type": undefined,
-    },
-    "ref": null,
-    "rendered": Array [
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": "one",
-        },
-        "ref": null,
-        "rendered": "one",
-        "type": "h1",
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": "two",
-        },
-        "ref": null,
-        "rendered": "two",
-        "type": "p",
-      },
-    ],
-    "type": Object {
-      "$$typeof": Symbol(react.forward_ref),
-      "attrs": undefined,
-      "componentStyle": ComponentStyle {
-        "componentId": "sc-bdVaJa",
-        "isStatic": false,
-        "rules": Array [
-          "
+        </p>
+      </div>
+    </StyledComponent>
+  </Block>
+</Panel>
+`;
+
+exports[`<Panel /> should render correctly 2`] = `
+.c0 {
   padding-right: 1rem;
   padding-left: 1rem;
   height: 100%;
-  width: ",
-          [Function],
-          ";
+  width: 20%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
-  background: ",
-          [Function],
-          ";
-",
-        ],
-      },
-      "displayName": "styled.div",
-      "render": [Function],
-      "styledComponentId": "sc-bdVaJa",
-      "target": "div",
-      "warnTooManyClasses": [Function],
-      "withComponent": [Function],
-    },
-  },
-  Symbol(enzyme.__nodes__): Array [
-    Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "function",
-      "props": Object {
-        "children": Array [
-          <h1>
-            one
-          </h1>,
-          <p>
-            two
-          </p>,
-        ],
-        "type": undefined,
-      },
-      "ref": null,
-      "rendered": Array [
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": "one",
-          },
-          "ref": null,
-          "rendered": "one",
-          "type": "h1",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": "two",
-          },
-          "ref": null,
-          "rendered": "two",
-          "type": "p",
-        },
-      ],
-      "type": Object {
-        "$$typeof": Symbol(react.forward_ref),
-        "attrs": undefined,
-        "componentStyle": ComponentStyle {
-          "componentId": "sc-bdVaJa",
-          "isStatic": false,
-          "rules": Array [
-            "
-  padding-right: 1rem;
-  padding-left: 1rem;
-  height: 100%;
-  width: ",
-            [Function],
-            ";
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  background: ",
-            [Function],
-            ";
-",
-          ],
-        },
-        "displayName": "styled.div",
-        "render": [Function],
-        "styledComponentId": "sc-bdVaJa",
-        "target": "div",
-        "warnTooManyClasses": [Function],
-        "withComponent": [Function],
-      },
-    },
-  ],
-  Symbol(enzyme.__options__): Object {
-    "adapter": ReactSixteenAdapter {
-      "options": Object {
-        "enableComponentDidUpdateOnSetState": true,
-        "lifecycles": Object {
-          "componentDidUpdate": Object {
-            "onSetState": true,
-          },
-          "getDerivedStateFromProps": true,
-          "getSnapshotBeforeUpdate": true,
-          "setState": Object {
-            "skipsComponentDidUpdateOnNullish": true,
-          },
-        },
-      },
-    },
-  },
+  background: #eee;
 }
+
+<Panel
+  type="explorer"
+>
+  <Block
+    type="explorer"
+  >
+    <StyledComponent
+      forwardedClass={
+        Object {
+          "$$typeof": Symbol(react.forward_ref),
+          "attrs": undefined,
+          "componentStyle": ComponentStyle {
+            "componentId": "sc-bdVaJa",
+            "isStatic": false,
+            "lastClassName": "eUTzXa",
+            "rules": Array [
+              "
+  padding-right: 1rem;
+  padding-left: 1rem;
+  height: 100%;
+  width: ",
+              [Function],
+              ";
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: ",
+              [Function],
+              ";
+",
+            ],
+          },
+          "displayName": "Block",
+          "render": [Function],
+          "styledComponentId": "sc-bdVaJa",
+          "target": "div",
+          "warnTooManyClasses": [Function],
+          "withComponent": [Function],
+        }
+      }
+      forwardedRef={null}
+      type="explorer"
+    >
+      <div
+        className="c0"
+        type="explorer"
+      >
+        <h1>
+          one
+        </h1>
+        <p>
+          two
+        </p>
+      </div>
+    </StyledComponent>
+  </Block>
+</Panel>
 `;

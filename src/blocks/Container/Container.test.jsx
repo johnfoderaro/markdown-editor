@@ -1,12 +1,13 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { mount } from 'enzyme';
+import 'jest-styled-components';
 
 import Container from './Container';
 
 let tree;
 
 beforeAll(() => {
-  tree = shallow(
+  tree = mount(
     <Container>
       <h1>one</h1>
       <p>two</p>

@@ -1,19 +1,28 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { mount } from 'enzyme';
+import 'jest-styled-components';
 
 import Node from './Node';
-import Arrow from '../Arrow';
 
 let tree;
 
 beforeAll(() => {
-  tree = shallow(
+  tree = mount(
     <Node>
       <Node.Name>
-        <h1>Arrow</h1>
+        <h1>Node Icons</h1>
       </Node.Name>
       <Node.Icon>
-        <Arrow width="20" height="20" />
+        <Node.Arrow width="20" height="20" />
+      </Node.Icon>
+      <Node.Icon>
+        <Node.Dir width="20" height="20" state="open" />
+      </Node.Icon>
+      <Node.Icon>
+        <Node.Dir width="20" height="20" state="closed" />
+      </Node.Icon>
+      <Node.Icon>
+        <Node.File width="20" height="20" />
       </Node.Icon>
     </Node>,
   );
@@ -29,8 +38,12 @@ describe('<Node />', () => {
   it('should contain a <Node.Name /> element', () => {
     expect(tree.find(Node.Name)).toBeDefined();
   });
-  it('should container a <Node.Icon /> element', () => {
+  it('should contain a <Node.Icon /> element', () => {
     expect(tree.find(Node.Icon)).toBeDefined();
-    expect(tree.find(Arrow)).toBeDefined();
+  });
+  it('should render an SVG icons', () => {
+    expect(tree.find(Node.Arrow)).toBeDefined();
+    expect(tree.find(Node.File)).toBeDefined();
+    expect(tree.find(Node.Dir)).toBeDefined();
   });
 });

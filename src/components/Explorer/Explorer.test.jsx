@@ -4,7 +4,6 @@ import { shallow } from 'enzyme';
 import Explorer from './Explorer';
 import content from '../../../__tests__/data/filesystem/get/data.json';
 
-import NodeList from '../../blocks/NodeList';
 import Node from '../../blocks/Node';
 
 import Ul from '../../elements/Ul';
@@ -28,7 +27,7 @@ describe('<Explorer />', () => {
     expect(wrapper).toBeDefined();
   });
   it('should render a NodeList', () => {
-    expect(wrapper.find(NodeList)).toBeDefined();
+    expect(wrapper.find(Node.List)).toBeDefined();
   });
   it('should render a NodeList containing <Ul />\'s', () => {
     expect(wrapper.find(Ul)).toBeDefined();

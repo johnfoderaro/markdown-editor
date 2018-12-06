@@ -6,11 +6,13 @@ import Editor from './Editor';
 import Text from '../../blocks/Text';
 
 let wrapper;
-let text;
+let name;
+let data;
 
 beforeAll(() => {
-  text = 'Hello, world!';
-  wrapper = shallow(<Editor file={text} />);
+  name = 'hello-world.md';
+  data = 'Hello, world!';
+  wrapper = shallow(<Editor name={name} data={data} />);
 });
 
 describe('<Editor />', () => {

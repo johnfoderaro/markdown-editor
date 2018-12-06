@@ -1,37 +1,54 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { mount } from 'enzyme';
+import 'jest-styled-components';
 
 import Action from './Action';
 
-let tree;
+let editorTree;
+let explorerTree;
+let overlayTree;
 
 beforeAll(() => {
-  tree = shallow(
-    <Action>
-      <Action.Button type="new">
-        New
-      </Action.Button>
-      <Action.Button type="save">
-        Save
-      </Action.Button>
-      <Action.Button type="delete">
-        Delete
-      </Action.Button>
+  editorTree = mount(
+    <Action type="editor">
+      <Action.Button type="new">New</Action.Button>
+      <Action.Button type="save">Save</Action.Button>
+      <Action.Button type="delete">Delete</Action.Button>
+      <Action.Button type="inverse">Inverse</Action.Button>
+    </Action>,
+  );
+  explorerTree = mount(
+    <Action type="explorer">
+      <Action.Button type="new">New</Action.Button>
+      <Action.Button type="save">Save</Action.Button>
+      <Action.Button type="delete">Delete</Action.Button>
+      <Action.Button type="inverse">Inverse</Action.Button>
+    </Action>,
+  );
+  overlayTree = mount(
+    <Action type="overlay">
+      <Action.Button type="new">New</Action.Button>
+      <Action.Button type="save">Save</Action.Button>
+      <Action.Button type="delete">Delete</Action.Button>
+      <Action.Button type="inverse">Inverse</Action.Button>
     </Action>,
   );
 });
 
 describe('<Action />', () => {
   it('should be defined', () => {
-    expect(tree).toBeDefined();
+    expect(editorTree).toBeDefined();
+    expect(explorerTree).toBeDefined();
+    expect(overlayTree).toBeDefined();
   });
   it('should render correctly', () => {
-    expect(tree).toMatchSnapshot();
-    expect(tree.find(Action.Button).at(0).props().type).toEqual('new');
-    expect(tree.find(Action.Button).at(1).props().type).toEqual('save');
-    expect(tree.find(Action.Button).at(2).props().type).toEqual('delete');
+    expect(editorTree).toMatchSnapshot();
+    expect(explorerTree).toMatchSnapshot();
+    expect(overlayTree).toMatchSnapshot();
   });
-  it('should contain a <Action.Button /> block', () => {
-    tree.find(Action.Button).at(0).simulate('hover');
+  it('should contain an <Action.Button /> block', () => {
+    expect(editorTree.find(Action.Button)).toBeDefined();
+    expect(explorerTree.find(Action.Button)).toBeDefined();
+    expect(overlayTree.find(Action.Button)).toBeDefined();
   });
 });

@@ -115,7 +115,7 @@ class App extends React.Component {
       path,
       error,
       ready,
-      file: { data },
+      file: { data, name },
     } = this.state;
     return ready && !error && (
       <>
@@ -135,7 +135,8 @@ class App extends React.Component {
             onItemSelect={this.handleItemSelect}
           />
           <Editor
-            file={data}
+            name={name}
+            data={data}
           />
         </Container>
       </>

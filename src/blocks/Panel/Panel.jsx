@@ -14,6 +14,8 @@ const Block = styled.div`
   background: ${({ type }) => (type === 'explorer' ? '#eee' : '#fff')};
 `;
 
+Block.displayName = 'Block';
+
 const Panel = ({ children, type }) => (
   <Block type={type}>
     {children}

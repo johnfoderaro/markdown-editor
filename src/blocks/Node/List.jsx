@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const NodeList = styled.div`
+const List = styled.div`
   margin-top: 1rem;
   margin-bottom: 1rem;
   padding-top: 1rem;
@@ -9,4 +9,4 @@ const NodeList = styled.div`
   flex-direction: column;
 `;
 
-export default NodeList;
+export default List;

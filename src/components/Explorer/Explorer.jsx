@@ -4,11 +4,7 @@ import { hot } from 'react-hot-loader';
 
 import Action from '../../blocks/Action';
 import Panel from '../../blocks/Panel';
-import NodeList from '../../blocks/NodeList';
 import Node from '../../blocks/Node';
-import Arrow from '../../blocks/Arrow';
-import Dir from '../../blocks/Dir';
-import File from '../../blocks/File';
 
 import Ul from '../../elements/Ul';
 import Li from '../../elements/Li';
@@ -16,13 +12,13 @@ import LinkButton from '../../elements/LinkButton';
 
 const Explorer = ({ content, onItemSelect }) => (
   <Panel type="explorer">
-    <NodeList>
+    <Node.List>
       <Ul>
         {content.parent && (
           <Li>
             <Node>
               <Node.Icon>
-                <Arrow width="20" height="20" />
+                <Node.Arrow width="20" height="20" />
               </Node.Icon>
               <Node.Name>
                 <LinkButton
@@ -41,7 +37,7 @@ const Explorer = ({ content, onItemSelect }) => (
         <Li>
           <Node>
             <Node.Icon>
-              <Dir state="open" width="23" height="20" />
+              <Node.Dir state="open" width="23" height="20" />
             </Node.Icon>
             <Node.Name>
               {content.name}
@@ -56,7 +52,7 @@ const Explorer = ({ content, onItemSelect }) => (
               {child.type === 'dir' ? (
                 <Node>
                   <Node.Icon>
-                    <Dir state="closed" width="20" height="20" />
+                    <Node.Dir state="closed" width="20" height="20" />
                   </Node.Icon>
                   <Node.Name>
                     <LinkButton
@@ -73,7 +69,7 @@ const Explorer = ({ content, onItemSelect }) => (
               ) : (
                 <Node>
                   <Node.Icon>
-                    <File width="20" height="20" />
+                    <Node.File width="20" height="20" />
                   </Node.Icon>
                   <Node.Name>
                     <LinkButton
@@ -93,7 +89,7 @@ const Explorer = ({ content, onItemSelect }) => (
           ))}
         </Ul>
       </Ul>
-    </NodeList>
+    </Node.List>
     <Action type="explorer">
       <Action.Button type="new">New</Action.Button>
     </Action>
