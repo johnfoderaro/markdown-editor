@@ -39,13 +39,19 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      id: null,
+      file: null,
       ready: false,
-      data: null,
-      file: 'Edit your text here...',
       path: 'root',
       error: false,
+      editor: {
+        input: '',
+        textarea: '',
+      },
     };
     this.handleItemSelect = this.handleItemSelect.bind(this);
+    this.handleSave = this.handleSave.bind(this);
+    this.handleTextEditorChange = this.handleTextEditorChange.bind(this);
     this.traverse = this.traverse.bind(this);
   }
 
@@ -67,11 +73,35 @@ class App extends React.Component {
     if (type === 'file') {
       try {
         const { data } = await axios.get(`/file/get/${id}/`);
-        this.setState(() => ({ file: data }));
+        this.setState(() => ({
+          id,
+          file: data.name,
+          editor: {
+            input: data.name,
+            textarea: data.data,
+          },
+        }));
       } catch (error) {
         this.setState(() => ({ error, ready: false }));
       }
     }
+  }
+
+  handleTextEditorChange(event) {
+    event.preventDefault();
+    const { localName, value } = event.target;
+    this.setState((prevState) => {
+      const { editor } = prevState;
+      editor[localName] = value;
+      return editor;
+    });
+  }
+
+  async handleSave(event) {
+    event.preventDefault();
+    // FIXME when saving an existing file when there is no change in text, API returns 404
+    const { id, editor: { textarea } } = this.state;
+    await axios.put('/file/update/', { id, update: { data: textarea } });
   }
 
   traverse(path) {
@@ -115,7 +145,7 @@ class App extends React.Component {
       path,
       error,
       ready,
-      file: { data, name },
+      editor: { input, textarea },
     } = this.state;
     return ready && !error && (
       <>
@@ -135,8 +165,10 @@ class App extends React.Component {
             onItemSelect={this.handleItemSelect}
           />
           <Editor
-            name={name}
-            data={data}
+            input={input}
+            textarea={textarea}
+            handleChange={this.handleTextEditorChange}
+            handleSave={this.handleSave}
           />
         </Container>
       </>

@@ -5,14 +5,15 @@ import Editor from './Editor';
 
 import Text from '../../blocks/Text';
 
+const handleChange = jest.fn();
 let wrapper;
-let name;
-let data;
+let input;
+let textarea;
 
 beforeAll(() => {
-  name = 'hello-world.md';
-  data = 'Hello, world!';
-  wrapper = shallow(<Editor name={name} data={data} />);
+  input = 'hello-world.md';
+  textarea = 'Hello, world!';
+  wrapper = shallow(<Editor input={input} textarea={textarea} handleChange={handleChange} />);
 });
 
 describe('<Editor />', () => {
