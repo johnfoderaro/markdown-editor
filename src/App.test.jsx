@@ -42,6 +42,19 @@ describe('App', () => {
     instance.handleItemSelect(eventFnFile);
     expect(axios.get).toHaveBeenNthCalledWith(2, '/file/get/100/');
   });
+  it('handleTextEditorChange method should update state', () => {
+    const changeInput = {
+      preventDefault: () => {},
+      target: { localName: 'input', value: 'input new data' },
+    };
+    const changeTextArea = {
+      preventDefault: () => {},
+      target: { localName: 'textarea', value: 'textarea new data' },
+    };
+    instance.handleTextEditorChange(changeInput);
+    instance.handleTextEditorChange(changeTextArea);
+    expect(wrapper.state('editor')).toEqual({ input: 'input new data', textarea: 'textarea new data' });
+  });
   it('traverse method should walk filesystem tree', () => {
     expect(instance.traverse('root')).toEqual(instance.state.data);
     expect(instance.traverse('dir1')).toEqual(instance.state.data.children[0]);
