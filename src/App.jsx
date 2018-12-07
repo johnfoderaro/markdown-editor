@@ -98,6 +98,14 @@ class App extends React.Component {
   }
 
   async handleSave(event) {
+    // save scenarios
+    // 1. new document without an id
+    // a. post to /file/insert/ get an ID
+    // b. post to /filesystem/insert/ get updated tree
+    // c. update state to reflect current filesystem tree
+    // 2. an existing document with an id
+    // a. put to /file/update/ get a status code
+    // b. done
     event.preventDefault();
     // FIXME when saving an existing file when there is no change in text, API returns 404
     const { id, editor: { textarea } } = this.state;
