@@ -39,15 +39,16 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      id: null,
-      file: null,
-      ready: false,
-      path: 'root',
-      error: false,
-      editor: {
+      file: {
+        id: '',
         input: '',
         textarea: '',
+        initialInput: '',
       },
+      error: false,
+      loader: true,
+      path: 'root',
+      tree: {},
     };
     this.handleItemSelect = this.handleItemSelect.bind(this);
     this.handleSave = this.handleSave.bind(this);
@@ -58,11 +59,21 @@ class App extends React.Component {
   async componentDidMount() {
     try {
       const { data } = await axios.get('/filesystem/get/');
-      this.setState(() => ({ data, ready: true }));
+      this.setState(() => ({
+        tree: data,
+        loader: false,
+      }));
     } catch (error) {
-      this.setState(() => ({ error, ready: false }));
+      this.setState(() => ({
+        error,
+        ready: false,
+      }));
     }
   }
+
+  // async handleItemCreate(event) {
+
+  // }
 
   async handleItemSelect(event) {
     event.preventDefault();
@@ -74,15 +85,15 @@ class App extends React.Component {
       try {
         const { data } = await axios.get(`/file/get/${id}/`);
         this.setState(() => ({
-          id,
-          file: data.name,
-          editor: {
+          file: {
+            id,
             input: data.name,
             textarea: data.data,
+            initialInput: data.name,
           },
         }));
       } catch (error) {
-        this.setState(() => ({ error, ready: false }));
+        this.setState(() => ({ error }));
       }
     }
   }
@@ -91,30 +102,49 @@ class App extends React.Component {
     event.preventDefault();
     const { localName, value } = event.target;
     this.setState((prevState) => {
-      const { editor } = prevState;
-      editor[localName] = value;
-      return editor;
+      const { file } = prevState;
+      file[localName] = value;
+      return file;
     });
   }
 
   async handleSave(event) {
-    // save scenarios
-    // 1. new document without an id
-    // a. post to /file/insert/ get an ID
-    // b. post to /filesystem/insert/ get updated tree
-    // c. update state to reflect current filesystem tree
-    // 2. an existing document with an id
-    // a. put to /file/update/ get a status code
-    // b. done
     event.preventDefault();
-    // FIXME when saving an existing file when there is no change in text, API returns 404
-    const { id, editor: { textarea } } = this.state;
-    await axios.put('/file/update/', { id, update: { data: textarea } });
+    try {
+      const {
+        path,
+        file: {
+          id,
+          input,
+          textarea,
+          initialInput,
+        },
+      } = this.state;
+      // TODO if 200, show save successful feedback
+      // FIXME what if saving an empty file?
+      await axios.put('/file/update/', { id, update: { name: input, data: textarea } });
+      if (input !== initialInput) {
+        const { data } = await axios.put('/filesystem/rename/', {
+          name: initialInput,
+          parent: path,
+          update: { name: input },
+        });
+        this.setState(prevState => ({
+          file: {
+            ...prevState.file,
+            initialInput: input,
+          },
+          tree: data,
+        }));
+      }
+    } catch (error) {
+      this.setState(() => ({ error }));
+    }
   }
 
   traverse(path) {
     let current;
-    const { data } = this.state;
+    const { tree } = this.state;
     const queue = () => {
       const items = [];
       return {
@@ -134,7 +164,7 @@ class App extends React.Component {
       ...items,
     });
     const nodeQueue = queue();
-    nodeQueue.enqueue(data);
+    nodeQueue.enqueue(tree);
     current = nodeQueue.dequeue();
     while (current) {
       for (let n = 0; n < current.children.length; n += 1) {
@@ -152,10 +182,10 @@ class App extends React.Component {
     const {
       path,
       error,
-      ready,
-      editor: { input, textarea },
+      loader,
+      file: { input, textarea },
     } = this.state;
-    return ready && !error && (
+    return !loader && !error && (
       <>
         <GlobalStyle />
         {/* <Overlay>
