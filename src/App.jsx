@@ -108,6 +108,9 @@ class App extends React.Component {
     });
   }
 
+  // console.log(this.state);
+  // TODO if 200, show save successful feedback
+  // FIXME what if saving an empty file?
   async handleSave(event) {
     event.preventDefault();
     try {
@@ -120,22 +123,54 @@ class App extends React.Component {
           initialInput,
         },
       } = this.state;
-      // TODO if 200, show save successful feedback
-      // FIXME what if saving an empty file?
-      await axios.put('/file/update/', { id, update: { name: input, data: textarea } });
-      if (input !== initialInput) {
-        const { data } = await axios.put('/filesystem/rename/', {
-          name: initialInput,
-          parent: path,
-          update: { name: input },
+      if (!id) {
+        // add the new file
+        const insertFile = await axios.post('/file/insert', {
+          name: input,
+          data: textarea,
         });
-        this.setState(prevState => ({
+        // add to the filesystem
+        const insertNode = await axios.post('/filesystem/insert', {
+          id: insertFile.data.id,
+          name: input,
+          type: 'file',
+          parent: path,
+          children: [],
+        });
+        // update the state
+        this.setState(() => ({
           file: {
-            ...prevState.file,
+            input,
+            textarea,
+            id: insertFile.data.id,
             initialInput: input,
           },
-          tree: data,
+          tree: insertNode.data,
         }));
+      } else {
+        // update existing
+        const updateFile = await axios.put('/file/update/', {
+          id,
+          update: {
+            name: input,
+            data: textarea,
+          },
+        });
+        // check if item is being re named
+        if (input !== initialInput) {
+          const renameNode = await axios.put('/filesystem/rename/', {
+            name: initialInput,
+            parent: path,
+            update: { name: input },
+          });
+          this.setState(prevState => ({
+            file: {
+              ...prevState.file,
+              initialInput: input,
+            },
+            tree: renameNode.data,
+          }));
+        }
       }
     } catch (error) {
       this.setState(() => ({ error }));
