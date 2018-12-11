@@ -18,10 +18,12 @@ const promise = {
   file: {
     get: Promise.resolve({ data: { name: '100.md', data: 'file 100 data' } }),
     update: Promise.resolve({ data: 'OK' }),
+    insert: Promise.resolve({ data: { id: '123' } }),
   },
   filesystem: {
     get: Promise.resolve({ data: fileSystemGet }),
     rename: Promise.resolve({ data: fileSystemGet }),
+    insert: Promise.resolve({ data: fileSystemGet }),
   },
 };
 
@@ -36,12 +38,23 @@ describe('App', () => {
       }
       return Promise.reject(new Error());
     });
+
     axios.put = jest.fn((path) => {
       if (path === '/file/update/') {
         return promise.file.update;
       }
       if (path === '/filesystem/rename/') {
         return promise.filesystem.rename;
+      }
+      return Promise.reject(new Error());
+    });
+
+    axios.post = jest.fn((path) => {
+      if (path === '/file/insert/') {
+        return promise.file.insert;
+      }
+      if (path === '/filesystem/insert/') {
+        return promise.filesystem.insert;
       }
       return Promise.reject(new Error());
     });
@@ -82,7 +95,30 @@ describe('App', () => {
       textarea: 'textarea new data',
     });
   });
-  it('handleSave should update the file', async () => {
+  it('handleSave should insert a new file when no id exists', async () => {
+    wrapper.setState(() => ({
+      file: {
+        id: '',
+        input: '01.md',
+        textarea: 'file 01 data',
+        initialInput: '',
+      },
+    }));
+    instance.handleSave(eventFnSave);
+    expect(axios.post).toHaveBeenNthCalledWith(1, '/file/insert/', {
+      name: '01.md',
+      data: 'file 01 data',
+    });
+    await promise.file.insert;
+    expect(axios.post).toHaveBeenNthCalledWith(2, '/filesystem/insert/', {
+      id: '123',
+      name: '01.md',
+      type: 'file',
+      parent: 'root',
+      children: [],
+    });
+  });
+  it('handleSave should update the file if it has an existing id', () => {
     wrapper.setState(() => ({
       file: {
         id: '100',
@@ -129,28 +165,6 @@ describe('App', () => {
     expect(instance.traverse('dir1')).toEqual(instance.state.tree.children[0]);
     expect(instance.state.error).toEqual(false);
     expect(instance.state.loader).toEqual(false);
-  });
-  describe('failed API calls', () => {
-    beforeEach(() => {
-      axios.get = jest.fn(() => Promise.reject(new Error()));
-      axios.put = jest.fn(() => Promise.reject(new Error()));
-      wrapper = shallow(<App />);
-      instance = wrapper.instance();
-    });
-    it('componentDidMount should make initial GET request', () => {
-      axios.get = jest.fn(() => Promise.reject(new Error()));
-      expect(instance.state.error).toEqual(new Error());
-    });
-    it('handleItemSelect should GET item contents', () => {
-      instance.handleItemSelect(eventFnDir);
-      instance.handleItemSelect(eventFnFile);
-      expect(instance.state.error).toEqual(new Error());
-    });
-    it('handleSave should update the file', () => {
-      instance.handleSave(eventFnSave);
-      expect(instance.state.error).toEqual(new Error());
-    });
-    afterEach(() => jest.clearAllMocks());
   });
   afterEach(() => jest.clearAllMocks());
 });

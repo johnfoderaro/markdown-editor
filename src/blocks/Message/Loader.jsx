@@ -22,10 +22,10 @@ const Svg = styled.svg`
   }
 `;
 
-const Error = () => (
+const Loader = () => (
   <Svg height="120" width="120">
     <circle cx="60" cy="60" r="40" strokeWidth="10" fill="none" />
   </Svg>
 );
 
-export default hot(module)(Error);
+export default hot(module)(Loader);

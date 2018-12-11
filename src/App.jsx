@@ -8,8 +8,8 @@ import Container from './blocks/Container';
 import Overlay from './blocks/Overlay';
 import Message from './blocks/Message';
 
-import Explorer from './components/Explorer';
 import Editor from './components/Editor';
+import Explorer from './components/Explorer';
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -125,12 +125,12 @@ class App extends React.Component {
       } = this.state;
       if (!id) {
         // add the new file
-        const insertFile = await axios.post('/file/insert', {
+        const insertFile = await axios.post('/file/insert/', {
           name: input,
           data: textarea,
         });
         // add to the filesystem
-        const insertNode = await axios.post('/filesystem/insert', {
+        const insertNode = await axios.post('/filesystem/insert/', {
           id: insertFile.data.id,
           name: input,
           type: 'file',
@@ -216,16 +216,15 @@ class App extends React.Component {
   render() {
     const {
       path,
-      error,
       loader,
       file: { input, textarea },
     } = this.state;
-    return !loader && !error && (
+    return !loader && (
       <>
         <GlobalStyle />
         {/* <Overlay>
           <Message>
-            <Message.Svg type="loader" />
+            <Message.Success />
             <Message.Text>Some Error</Message.Text>
             <Action type="overlay">
               <Action.Button type="inverse">Ok</Action.Button>

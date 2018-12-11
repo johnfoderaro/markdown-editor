@@ -6,16 +6,6 @@ exports[`<Message /> should render correctly 1`] = `
   margin-right: auto;
 }
 
-.c2 {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.c3 {
-  margin-left: auto;
-  margin-right: auto;
-}
-
 .c4 {
   margin-left: auto;
   margin-right: auto;
@@ -30,6 +20,16 @@ exports[`<Message /> should render correctly 1`] = `
   stroke-dashoffset: 260;
   -webkit-animation: dash 1.5s infinite;
   animation: dash 1.5s infinite;
+}
+
+.c3 {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.c2 {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .c0 {
@@ -47,6 +47,7 @@ exports[`<Message /> should render correctly 1`] = `
     forwardedClass={
       Object {
         "$$typeof": Symbol(react.forward_ref),
+        "Bomb": [Function],
         "Error": [Function],
         "Loader": [Function],
         "Success": [Function],
@@ -54,10 +55,11 @@ exports[`<Message /> should render correctly 1`] = `
           "$$typeof": Symbol(react.forward_ref),
           "attrs": undefined,
           "componentStyle": ComponentStyle {
-            "componentId": "sc-bdVaJa",
+            "componentId": "sc-ifAKCX",
             "isStatic": true,
             "rules": Array [
               "
+  padding: 1rem;
   color: #fff;
   font-size: 1.5em;
 ",
@@ -65,7 +67,7 @@ exports[`<Message /> should render correctly 1`] = `
           },
           "displayName": "styled.span",
           "render": [Function],
-          "styledComponentId": "sc-bdVaJa",
+          "styledComponentId": "sc-ifAKCX",
           "target": "span",
           "warnTooManyClasses": [Function],
           "withComponent": [Function],
@@ -73,7 +75,7 @@ exports[`<Message /> should render correctly 1`] = `
         "Warning": [Function],
         "attrs": undefined,
         "componentStyle": ComponentStyle {
-          "componentId": "sc-EHOje",
+          "componentId": "sc-bZQynM",
           "isStatic": true,
           "lastClassName": "c0",
           "rules": Array [
@@ -85,7 +87,7 @@ exports[`<Message /> should render correctly 1`] = `
         },
         "displayName": "styled.div",
         "render": [Function],
-        "styledComponentId": "sc-EHOje",
+        "styledComponentId": "sc-bZQynM",
         "target": "div",
         "warnTooManyClasses": [Function],
         "withComponent": [Function],
@@ -161,7 +163,7 @@ exports[`<Message /> should render correctly 1`] = `
                 "$$typeof": Symbol(react.forward_ref),
                 "attrs": undefined,
                 "componentStyle": ComponentStyle {
-                  "componentId": "sc-htpNat",
+                  "componentId": "sc-EHOje",
                   "isStatic": true,
                   "lastClassName": "c2",
                   "rules": Array [
@@ -173,7 +175,7 @@ exports[`<Message /> should render correctly 1`] = `
                 },
                 "displayName": "styled.svg",
                 "render": [Function],
-                "styledComponentId": "sc-htpNat",
+                "styledComponentId": "sc-EHOje",
                 "target": "svg",
                 "warnTooManyClasses": [Function],
                 "withComponent": [Function],
@@ -252,7 +254,7 @@ exports[`<Message /> should render correctly 1`] = `
           </StyledComponent>
         </styled.svg>
       </Success>
-      <Error>
+      <Loader>
         <styled.svg
           height="120"
           width="120"
@@ -263,7 +265,7 @@ exports[`<Message /> should render correctly 1`] = `
                 "$$typeof": Symbol(react.forward_ref),
                 "attrs": undefined,
                 "componentStyle": ComponentStyle {
-                  "componentId": "sc-ifAKCX",
+                  "componentId": "sc-htpNat",
                   "isStatic": true,
                   "lastClassName": "c4",
                   "rules": Array [
@@ -290,7 +292,7 @@ exports[`<Message /> should render correctly 1`] = `
                 },
                 "displayName": "styled.svg",
                 "render": [Function],
-                "styledComponentId": "sc-ifAKCX",
+                "styledComponentId": "sc-htpNat",
                 "target": "svg",
                 "warnTooManyClasses": [Function],
                 "withComponent": [Function],
@@ -315,7 +317,7 @@ exports[`<Message /> should render correctly 1`] = `
             </svg>
           </StyledComponent>
         </styled.svg>
-      </Error>
+      </Loader>
     </div>
   </StyledComponent>
 </styled.div>

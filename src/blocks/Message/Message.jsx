@@ -1,20 +1,22 @@
 import styled from 'styled-components';
 
-import Text from './Text';
+import Bomb from './Bomb';
 import Error from './Error';
-import Warning from './Warning';
-import Success from './Success';
 import Loader from './Loader';
+import Success from './Success';
+import Text from './Text';
+import Warning from './Warning';
 
 const Message = styled.div`
   display: flex;
   flex-direction: column;
 `;
 
-Message.Text = Text;
+Message.Bomb = Bomb;
 Message.Error = Error;
-Message.Warning = Warning;
-Message.Success = Success;
 Message.Loader = Loader;
+Message.Success = Success;
+Message.Text = Text;
+Message.Warning = Warning;
 
 export default Message;

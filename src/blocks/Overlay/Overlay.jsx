@@ -24,7 +24,7 @@ const Overlay = ({ children }) => (
 );
 
 Overlay.propTypes = {
-  children: PropTypes.arrayOf(PropTypes.element).isRequired,
+  children: PropTypes.element.isRequired,
 };
 
 export default hot(module)(Overlay);
