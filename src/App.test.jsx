@@ -163,7 +163,6 @@ describe('App', () => {
   it('should traverse method should walk filesystem tree', () => {
     expect(instance.traverse('root')).toEqual(instance.state.tree);
     expect(instance.traverse('dir1')).toEqual(instance.state.tree.children[0]);
-    expect(instance.state.error).toEqual(false);
     expect(instance.state.loader).toEqual(false);
   });
   afterEach(() => jest.clearAllMocks());

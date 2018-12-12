@@ -6,7 +6,12 @@ exports[`<Message /> should render correctly 1`] = `
   margin-right: auto;
 }
 
-.c4 {
+.c2 {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.c5 {
   margin-left: auto;
   margin-right: auto;
   -webkit-transform: rotate(-90deg);
@@ -15,19 +20,19 @@ exports[`<Message /> should render correctly 1`] = `
   stroke: #fff;
 }
 
-.c4 circle {
+.c5 circle {
   stroke-dasharray: 260;
   stroke-dashoffset: 260;
   -webkit-animation: dash 1.5s infinite;
   animation: dash 1.5s infinite;
 }
 
-.c3 {
+.c4 {
   margin-left: auto;
   margin-right: auto;
 }
 
-.c2 {
+.c3 {
   margin-left: auto;
   margin-right: auto;
 }
@@ -98,6 +103,58 @@ exports[`<Message /> should render correctly 1`] = `
     <div
       className="c0"
     >
+      <Bomb>
+        <styled.svg
+          height="120"
+          viewBox="0 0 1792 1792"
+          width="120"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <StyledComponent
+            forwardedClass={
+              Object {
+                "$$typeof": Symbol(react.forward_ref),
+                "attrs": undefined,
+                "componentStyle": ComponentStyle {
+                  "componentId": "sc-bdVaJa",
+                  "isStatic": true,
+                  "lastClassName": "c1",
+                  "rules": Array [
+                    "
+  margin-left: auto;
+  margin-right: auto;
+",
+                  ],
+                },
+                "displayName": "styled.svg",
+                "render": [Function],
+                "styledComponentId": "sc-bdVaJa",
+                "target": "svg",
+                "warnTooManyClasses": [Function],
+                "withComponent": [Function],
+              }
+            }
+            forwardedRef={null}
+            height="120"
+            viewBox="0 0 1792 1792"
+            width="120"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <svg
+              className="c1"
+              height="120"
+              viewBox="0 0 1792 1792"
+              width="120"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M571 589q-10-25-34-35t-49 0q-108 44-191 127t-127 191q-10 25 0 49t35 34q13 5 24 5 42 0 60-40 34-84 98.5-148.5t148.5-98.5q25-11 35-35t0-49zm942-356l46 46-244 243 68 68q19 19 19 45.5t-19 45.5l-64 64q89 161 89 343 0 143-55.5 273.5t-150 225-225 150-273.5 55.5-273.5-55.5-225-150-150-225-55.5-273.5 55.5-273.5 150-225 225-150 273.5-55.5q182 0 343 89l64-64q19-19 45.5-19t45.5 19l68 68zm8-56q-10 10-22 10-13 0-23-10l-91-90q-9-10-9-23t9-23q10-9 23-9t23 9l90 91q10 9 10 22.5t-10 22.5zm230 230q-11 9-23 9t-23-9l-90-91q-10-9-10-22.5t10-22.5q9-10 22.5-10t22.5 10l91 90q9 10 9 23t-9 23zm41-183q0 14-9 23t-23 9h-96q-14 0-23-9t-9-23 9-23 23-9h96q14 0 23 9t9 23zm-192-192v96q0 14-9 23t-23 9-23-9-9-23v-96q0-14 9-23t23-9 23 9 9 23zm151 55l-91 90q-10 10-22 10-13 0-23-10-10-9-10-22.5t10-22.5l90-91q10-9 23-9t23 9q9 10 9 23t-9 23z"
+                fill="#fff"
+              />
+            </svg>
+          </StyledComponent>
+        </styled.svg>
+      </Bomb>
       <Error>
         <styled.svg
           height="120"
@@ -113,7 +170,7 @@ exports[`<Message /> should render correctly 1`] = `
                 "componentStyle": ComponentStyle {
                   "componentId": "sc-bwzfXH",
                   "isStatic": true,
-                  "lastClassName": "c1",
+                  "lastClassName": "c2",
                   "rules": Array [
                     "
   margin-left: auto;
@@ -136,7 +193,7 @@ exports[`<Message /> should render correctly 1`] = `
             xmlns="http://www.w3.org/2000/svg"
           >
             <svg
-              className="c1"
+              className="c2"
               height="120"
               viewBox="0 0 1792 1792"
               width="120"
@@ -165,7 +222,7 @@ exports[`<Message /> should render correctly 1`] = `
                 "componentStyle": ComponentStyle {
                   "componentId": "sc-EHOje",
                   "isStatic": true,
-                  "lastClassName": "c2",
+                  "lastClassName": "c3",
                   "rules": Array [
                     "
   margin-left: auto;
@@ -188,7 +245,7 @@ exports[`<Message /> should render correctly 1`] = `
             xmlns="http://www.w3.org/2000/svg"
           >
             <svg
-              className="c2"
+              className="c3"
               height="120"
               viewBox="0 0 1792 1792"
               width="120"
@@ -217,7 +274,7 @@ exports[`<Message /> should render correctly 1`] = `
                 "componentStyle": ComponentStyle {
                   "componentId": "sc-bxivhb",
                   "isStatic": true,
-                  "lastClassName": "c3",
+                  "lastClassName": "c4",
                   "rules": Array [
                     "
   margin-left: auto;
@@ -240,7 +297,7 @@ exports[`<Message /> should render correctly 1`] = `
             xmlns="http://www.w3.org/2000/svg"
           >
             <svg
-              className="c3"
+              className="c4"
               height="120"
               viewBox="0 0 1792 1792"
               width="120"
@@ -267,12 +324,12 @@ exports[`<Message /> should render correctly 1`] = `
                 "componentStyle": ComponentStyle {
                   "componentId": "sc-htpNat",
                   "isStatic": true,
-                  "lastClassName": "c4",
+                  "lastClassName": "c5",
                   "rules": Array [
                     "
   margin-left: auto;
   margin-right: auto;
-  transform: rotate(-90deg);  
+  transform: rotate(-90deg);
   stroke: #fff;
   circle {
     stroke-dasharray: 260;
@@ -303,7 +360,7 @@ exports[`<Message /> should render correctly 1`] = `
             width="120"
           >
             <svg
-              className="c4"
+              className="c5"
               height="120"
               width="120"
             >

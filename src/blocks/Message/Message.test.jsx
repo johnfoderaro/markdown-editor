@@ -9,6 +9,7 @@ let tree;
 beforeAll(() => {
   tree = mount(
     <Message>
+      <Message.Bomb />
       <Message.Error />
       <Message.Warning />
       <Message.Success />
@@ -25,6 +26,7 @@ describe('<Message />', () => {
     expect(tree).toMatchSnapshot();
   });
   it('should render svg icons correctly', () => {
+    expect(tree.find(Message.Bomb)).toBeDefined();
     expect(tree.find(Message.Error)).toBeDefined();
     expect(tree.find(Message.Warning)).toBeDefined();
     expect(tree.find(Message.Success)).toBeDefined();

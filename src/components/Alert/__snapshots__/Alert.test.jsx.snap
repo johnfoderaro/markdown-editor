@@ -1,0 +1,1324 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Alert /> should render correctly 1`] = `
+.c6 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  height: 3rem;
+  width: 6rem;
+  background: none;
+  border: none;
+  border-radius: .5rem;
+  font-size: 1.25em;
+  color: rgb(0,0,0);
+  cursor: pointer;
+}
+
+.c5 {
+  color: rgb(255,255,255);
+  margin-right: 0;
+  margin-left: 0;
+  border: 2px solid rgb(255,255,255);
+}
+
+.c5:hover {
+  border: none;
+  background: rgb(255,255,255);
+  color: rgb(0,0,0);
+}
+
+.c4 {
+  margin-top: auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c0 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0,0,0,0.75);
+  z-index: 10;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.c2 {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.c3 {
+  padding: 1rem;
+  color: #fff;
+  font-size: 1.5em;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+<Alert
+  button="Reload"
+  handleClick={[MockFunction]}
+  text="this is an alert"
+  type="error"
+>
+  <Overlay>
+    <styled.div>
+      <StyledComponent
+        forwardedClass={
+          Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "attrs": undefined,
+            "componentStyle": ComponentStyle {
+              "componentId": "sc-bxivhb",
+              "isStatic": true,
+              "lastClassName": "c0",
+              "rules": Array [
+                "
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0,0,0,0.75);
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+",
+              ],
+            },
+            "displayName": "styled.div",
+            "render": [Function],
+            "styledComponentId": "sc-bxivhb",
+            "target": "div",
+            "warnTooManyClasses": [Function],
+            "withComponent": [Function],
+          }
+        }
+        forwardedRef={null}
+      >
+        <div
+          className="c0"
+        >
+          <styled.div>
+            <StyledComponent
+              forwardedClass={
+                Object {
+                  "$$typeof": Symbol(react.forward_ref),
+                  "Bomb": [Function],
+                  "Error": [Function],
+                  "Loader": [Function],
+                  "Success": [Function],
+                  "Text": Object {
+                    "$$typeof": Symbol(react.forward_ref),
+                    "attrs": undefined,
+                    "componentStyle": ComponentStyle {
+                      "componentId": "sc-htoDjs",
+                      "isStatic": true,
+                      "lastClassName": "c3",
+                      "rules": Array [
+                        "
+  padding: 1rem;
+  color: #fff;
+  font-size: 1.5em;
+",
+                      ],
+                    },
+                    "displayName": "styled.span",
+                    "render": [Function],
+                    "styledComponentId": "sc-htoDjs",
+                    "target": "span",
+                    "warnTooManyClasses": [Function],
+                    "withComponent": [Function],
+                  },
+                  "Warning": [Function],
+                  "attrs": undefined,
+                  "componentStyle": ComponentStyle {
+                    "componentId": "sc-iwsKbI",
+                    "isStatic": true,
+                    "lastClassName": "c1",
+                    "rules": Array [
+                      "
+  display: flex;
+  flex-direction: column;
+",
+                    ],
+                  },
+                  "displayName": "styled.div",
+                  "render": [Function],
+                  "styledComponentId": "sc-iwsKbI",
+                  "target": "div",
+                  "warnTooManyClasses": [Function],
+                  "withComponent": [Function],
+                }
+              }
+              forwardedRef={null}
+            >
+              <div
+                className="c1"
+              >
+                <Error>
+                  <styled.svg
+                    height="120"
+                    viewBox="0 0 1792 1792"
+                    width="120"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <StyledComponent
+                      forwardedClass={
+                        Object {
+                          "$$typeof": Symbol(react.forward_ref),
+                          "attrs": undefined,
+                          "componentStyle": ComponentStyle {
+                            "componentId": "sc-EHOje",
+                            "isStatic": true,
+                            "lastClassName": "c2",
+                            "rules": Array [
+                              "
+  margin-left: auto;
+  margin-right: auto;
+",
+                            ],
+                          },
+                          "displayName": "styled.svg",
+                          "render": [Function],
+                          "styledComponentId": "sc-EHOje",
+                          "target": "svg",
+                          "warnTooManyClasses": [Function],
+                          "withComponent": [Function],
+                        }
+                      }
+                      forwardedRef={null}
+                      height="120"
+                      viewBox="0 0 1792 1792"
+                      width="120"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <svg
+                        className="c2"
+                        height="120"
+                        viewBox="0 0 1792 1792"
+                        width="120"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M1440 893q0-161-87-295l-754 753q137 89 297 89 111 0 211.5-43.5t173.5-116.5 116-174.5 43-212.5zm-999 299l755-754q-135-91-300-91-148 0-273 73t-198 199-73 274q0 162 89 299zm1223-299q0 157-61 300t-163.5 246-245 164-298.5 61-298.5-61-245-164-163.5-246-61-300 61-299.5 163.5-245.5 245-164 298.5-61 298.5 61 245 164 163.5 245.5 61 299.5z"
+                          fill="#fff"
+                        />
+                      </svg>
+                    </StyledComponent>
+                  </styled.svg>
+                </Error>
+                <styled.span>
+                  <StyledComponent
+                    forwardedClass={
+                      Object {
+                        "$$typeof": Symbol(react.forward_ref),
+                        "attrs": undefined,
+                        "componentStyle": ComponentStyle {
+                          "componentId": "sc-htoDjs",
+                          "isStatic": true,
+                          "lastClassName": "c3",
+                          "rules": Array [
+                            "
+  padding: 1rem;
+  color: #fff;
+  font-size: 1.5em;
+",
+                          ],
+                        },
+                        "displayName": "styled.span",
+                        "render": [Function],
+                        "styledComponentId": "sc-htoDjs",
+                        "target": "span",
+                        "warnTooManyClasses": [Function],
+                        "withComponent": [Function],
+                      }
+                    }
+                    forwardedRef={null}
+                  >
+                    <span
+                      className="c3"
+                    >
+                      this is an alert
+                    </span>
+                  </StyledComponent>
+                </styled.span>
+                <Action
+                  type="overlay"
+                >
+                  <styled.div
+                    type="overlay"
+                  >
+                    <StyledComponent
+                      forwardedClass={
+                        Object {
+                          "$$typeof": Symbol(react.forward_ref),
+                          "attrs": undefined,
+                          "componentStyle": ComponentStyle {
+                            "componentId": "sc-htpNat",
+                            "isStatic": false,
+                            "lastClassName": "c4",
+                            "rules": Array [
+                              "
+  margin-top: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: ",
+                              [Function],
+                              ";
+",
+                            ],
+                          },
+                          "displayName": "styled.div",
+                          "render": [Function],
+                          "styledComponentId": "sc-htpNat",
+                          "target": "div",
+                          "warnTooManyClasses": [Function],
+                          "withComponent": [Function],
+                        }
+                      }
+                      forwardedRef={null}
+                      type="overlay"
+                    >
+                      <div
+                        className="c4"
+                        type="overlay"
+                      >
+                        <Styled(Button)
+                          onClick={[MockFunction]}
+                          type="inverse"
+                        >
+                          <StyledComponent
+                            forwardedClass={
+                              Object {
+                                "$$typeof": Symbol(react.forward_ref),
+                                "attrs": undefined,
+                                "componentStyle": ComponentStyle {
+                                  "componentId": "sc-bwzfXH",
+                                  "isStatic": false,
+                                  "lastClassName": "c5",
+                                  "rules": Array [
+                                    "
+  color: ",
+                                    [Function],
+                                    ";
+  margin-right: ",
+                                    [Function],
+                                    ";
+  margin-left: ",
+                                    [Function],
+                                    ";
+  border: 2px solid ",
+                                    [Function],
+                                    ";
+    &:hover {
+      border: none;
+      background: ",
+                                    [Function],
+                                    ";
+      color: ",
+                                    [Function],
+                                    ";
+  }
+",
+                                  ],
+                                },
+                                "displayName": "Styled(Button)",
+                                "render": [Function],
+                                "styledComponentId": "sc-bwzfXH",
+                                "target": [Function],
+                                "warnTooManyClasses": [Function],
+                                "withComponent": [Function],
+                                Symbol(Symbol.hasInstance): [Function],
+                              }
+                            }
+                            forwardedRef={null}
+                            onClick={[MockFunction]}
+                            type="inverse"
+                          >
+                            <Button
+                              className="c5"
+                              onClick={[MockFunction]}
+                              type="inverse"
+                            >
+                              <styled.button
+                                className="c5"
+                                onClick={[MockFunction]}
+                                type="inverse"
+                              >
+                                <StyledComponent
+                                  className="c5"
+                                  forwardedClass={
+                                    Object {
+                                      "$$typeof": Symbol(react.forward_ref),
+                                      "attrs": undefined,
+                                      "componentStyle": ComponentStyle {
+                                        "componentId": "sc-bdVaJa",
+                                        "isStatic": true,
+                                        "lastClassName": "c6",
+                                        "rules": Array [
+                                          "
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  height: 3rem;
+  width: 6rem;
+  background: none;
+  border: none;
+  border-radius: .5rem;
+  font-size: 1.25em;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+",
+                                        ],
+                                      },
+                                      "displayName": "styled.button",
+                                      "render": [Function],
+                                      "styledComponentId": "sc-bdVaJa",
+                                      "target": "button",
+                                      "warnTooManyClasses": [Function],
+                                      "withComponent": [Function],
+                                    }
+                                  }
+                                  forwardedRef={null}
+                                  onClick={[MockFunction]}
+                                  type="inverse"
+                                >
+                                  <button
+                                    className="c5 c6"
+                                    onClick={[MockFunction]}
+                                    type="inverse"
+                                  >
+                                    Reload
+                                  </button>
+                                </StyledComponent>
+                              </styled.button>
+                            </Button>
+                          </StyledComponent>
+                        </Styled(Button)>
+                      </div>
+                    </StyledComponent>
+                  </styled.div>
+                </Action>
+              </div>
+            </StyledComponent>
+          </styled.div>
+        </div>
+      </StyledComponent>
+    </styled.div>
+  </Overlay>
+</Alert>
+`;
+
+exports[`<Alert /> should render correctly 2`] = `
+.c6 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  height: 3rem;
+  width: 6rem;
+  background: none;
+  border: none;
+  border-radius: .5rem;
+  font-size: 1.25em;
+  color: rgb(0,0,0);
+  cursor: pointer;
+}
+
+.c5 {
+  color: rgb(255,255,255);
+  margin-right: 0;
+  margin-left: 0;
+  border: 2px solid rgb(255,255,255);
+}
+
+.c5:hover {
+  border: none;
+  background: rgb(255,255,255);
+  color: rgb(0,0,0);
+}
+
+.c4 {
+  margin-top: auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c0 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0,0,0,0.75);
+  z-index: 10;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.c2 {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.c3 {
+  padding: 1rem;
+  color: #fff;
+  font-size: 1.5em;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+<Alert
+  button="Ok"
+  handleClick={[MockFunction]}
+  text="this is an alert"
+  type="success"
+>
+  <Overlay>
+    <styled.div>
+      <StyledComponent
+        forwardedClass={
+          Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "attrs": undefined,
+            "componentStyle": ComponentStyle {
+              "componentId": "sc-bxivhb",
+              "isStatic": true,
+              "lastClassName": "c0",
+              "rules": Array [
+                "
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0,0,0,0.75);
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+",
+              ],
+            },
+            "displayName": "styled.div",
+            "render": [Function],
+            "styledComponentId": "sc-bxivhb",
+            "target": "div",
+            "warnTooManyClasses": [Function],
+            "withComponent": [Function],
+          }
+        }
+        forwardedRef={null}
+      >
+        <div
+          className="c0"
+        >
+          <styled.div>
+            <StyledComponent
+              forwardedClass={
+                Object {
+                  "$$typeof": Symbol(react.forward_ref),
+                  "Bomb": [Function],
+                  "Error": [Function],
+                  "Loader": [Function],
+                  "Success": [Function],
+                  "Text": Object {
+                    "$$typeof": Symbol(react.forward_ref),
+                    "attrs": undefined,
+                    "componentStyle": ComponentStyle {
+                      "componentId": "sc-htoDjs",
+                      "isStatic": true,
+                      "lastClassName": "c3",
+                      "rules": Array [
+                        "
+  padding: 1rem;
+  color: #fff;
+  font-size: 1.5em;
+",
+                      ],
+                    },
+                    "displayName": "styled.span",
+                    "render": [Function],
+                    "styledComponentId": "sc-htoDjs",
+                    "target": "span",
+                    "warnTooManyClasses": [Function],
+                    "withComponent": [Function],
+                  },
+                  "Warning": [Function],
+                  "attrs": undefined,
+                  "componentStyle": ComponentStyle {
+                    "componentId": "sc-iwsKbI",
+                    "isStatic": true,
+                    "lastClassName": "c1",
+                    "rules": Array [
+                      "
+  display: flex;
+  flex-direction: column;
+",
+                    ],
+                  },
+                  "displayName": "styled.div",
+                  "render": [Function],
+                  "styledComponentId": "sc-iwsKbI",
+                  "target": "div",
+                  "warnTooManyClasses": [Function],
+                  "withComponent": [Function],
+                }
+              }
+              forwardedRef={null}
+            >
+              <div
+                className="c1"
+              >
+                <Success>
+                  <styled.svg
+                    height="120"
+                    viewBox="0 0 1792 1792"
+                    width="120"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <StyledComponent
+                      forwardedClass={
+                        Object {
+                          "$$typeof": Symbol(react.forward_ref),
+                          "attrs": undefined,
+                          "componentStyle": ComponentStyle {
+                            "componentId": "sc-gzVnrw",
+                            "isStatic": true,
+                            "lastClassName": "c2",
+                            "rules": Array [
+                              "
+  margin-left: auto;
+  margin-right: auto;
+",
+                            ],
+                          },
+                          "displayName": "styled.svg",
+                          "render": [Function],
+                          "styledComponentId": "sc-gzVnrw",
+                          "target": "svg",
+                          "warnTooManyClasses": [Function],
+                          "withComponent": [Function],
+                        }
+                      }
+                      forwardedRef={null}
+                      height="120"
+                      viewBox="0 0 1792 1792"
+                      width="120"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <svg
+                        className="c2"
+                        height="120"
+                        viewBox="0 0 1792 1792"
+                        width="120"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M1299 813l-422 422q-19 19-45 19t-45-19l-294-294q-19-19-19-45t19-45l102-102q19-19 45-19t45 19l147 147 275-275q19-19 45-19t45 19l102 102q19 19 19 45t-19 45zm141 83q0-148-73-273t-198-198-273-73-273 73-198 198-73 273 73 273 198 198 273 73 273-73 198-198 73-273zm224 0q0 209-103 385.5t-279.5 279.5-385.5 103-385.5-103-279.5-279.5-103-385.5 103-385.5 279.5-279.5 385.5-103 385.5 103 279.5 279.5 103 385.5z"
+                          fill="#fff"
+                        />
+                      </svg>
+                    </StyledComponent>
+                  </styled.svg>
+                </Success>
+                <styled.span>
+                  <StyledComponent
+                    forwardedClass={
+                      Object {
+                        "$$typeof": Symbol(react.forward_ref),
+                        "attrs": undefined,
+                        "componentStyle": ComponentStyle {
+                          "componentId": "sc-htoDjs",
+                          "isStatic": true,
+                          "lastClassName": "c3",
+                          "rules": Array [
+                            "
+  padding: 1rem;
+  color: #fff;
+  font-size: 1.5em;
+",
+                          ],
+                        },
+                        "displayName": "styled.span",
+                        "render": [Function],
+                        "styledComponentId": "sc-htoDjs",
+                        "target": "span",
+                        "warnTooManyClasses": [Function],
+                        "withComponent": [Function],
+                      }
+                    }
+                    forwardedRef={null}
+                  >
+                    <span
+                      className="c3"
+                    >
+                      this is an alert
+                    </span>
+                  </StyledComponent>
+                </styled.span>
+                <Action
+                  type="overlay"
+                >
+                  <styled.div
+                    type="overlay"
+                  >
+                    <StyledComponent
+                      forwardedClass={
+                        Object {
+                          "$$typeof": Symbol(react.forward_ref),
+                          "attrs": undefined,
+                          "componentStyle": ComponentStyle {
+                            "componentId": "sc-htpNat",
+                            "isStatic": false,
+                            "lastClassName": "c4",
+                            "rules": Array [
+                              "
+  margin-top: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: ",
+                              [Function],
+                              ";
+",
+                            ],
+                          },
+                          "displayName": "styled.div",
+                          "render": [Function],
+                          "styledComponentId": "sc-htpNat",
+                          "target": "div",
+                          "warnTooManyClasses": [Function],
+                          "withComponent": [Function],
+                        }
+                      }
+                      forwardedRef={null}
+                      type="overlay"
+                    >
+                      <div
+                        className="c4"
+                        type="overlay"
+                      >
+                        <Styled(Button)
+                          onClick={[MockFunction]}
+                          type="inverse"
+                        >
+                          <StyledComponent
+                            forwardedClass={
+                              Object {
+                                "$$typeof": Symbol(react.forward_ref),
+                                "attrs": undefined,
+                                "componentStyle": ComponentStyle {
+                                  "componentId": "sc-bwzfXH",
+                                  "isStatic": false,
+                                  "lastClassName": "c5",
+                                  "rules": Array [
+                                    "
+  color: ",
+                                    [Function],
+                                    ";
+  margin-right: ",
+                                    [Function],
+                                    ";
+  margin-left: ",
+                                    [Function],
+                                    ";
+  border: 2px solid ",
+                                    [Function],
+                                    ";
+    &:hover {
+      border: none;
+      background: ",
+                                    [Function],
+                                    ";
+      color: ",
+                                    [Function],
+                                    ";
+  }
+",
+                                  ],
+                                },
+                                "displayName": "Styled(Button)",
+                                "render": [Function],
+                                "styledComponentId": "sc-bwzfXH",
+                                "target": [Function],
+                                "warnTooManyClasses": [Function],
+                                "withComponent": [Function],
+                                Symbol(Symbol.hasInstance): [Function],
+                              }
+                            }
+                            forwardedRef={null}
+                            onClick={[MockFunction]}
+                            type="inverse"
+                          >
+                            <Button
+                              className="c5"
+                              onClick={[MockFunction]}
+                              type="inverse"
+                            >
+                              <styled.button
+                                className="c5"
+                                onClick={[MockFunction]}
+                                type="inverse"
+                              >
+                                <StyledComponent
+                                  className="c5"
+                                  forwardedClass={
+                                    Object {
+                                      "$$typeof": Symbol(react.forward_ref),
+                                      "attrs": undefined,
+                                      "componentStyle": ComponentStyle {
+                                        "componentId": "sc-bdVaJa",
+                                        "isStatic": true,
+                                        "lastClassName": "c6",
+                                        "rules": Array [
+                                          "
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  height: 3rem;
+  width: 6rem;
+  background: none;
+  border: none;
+  border-radius: .5rem;
+  font-size: 1.25em;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+",
+                                        ],
+                                      },
+                                      "displayName": "styled.button",
+                                      "render": [Function],
+                                      "styledComponentId": "sc-bdVaJa",
+                                      "target": "button",
+                                      "warnTooManyClasses": [Function],
+                                      "withComponent": [Function],
+                                    }
+                                  }
+                                  forwardedRef={null}
+                                  onClick={[MockFunction]}
+                                  type="inverse"
+                                >
+                                  <button
+                                    className="c5 c6"
+                                    onClick={[MockFunction]}
+                                    type="inverse"
+                                  >
+                                    Ok
+                                  </button>
+                                </StyledComponent>
+                              </styled.button>
+                            </Button>
+                          </StyledComponent>
+                        </Styled(Button)>
+                      </div>
+                    </StyledComponent>
+                  </styled.div>
+                </Action>
+              </div>
+            </StyledComponent>
+          </styled.div>
+        </div>
+      </StyledComponent>
+    </styled.div>
+  </Overlay>
+</Alert>
+`;
+
+exports[`<Alert /> should render correctly 3`] = `
+.c6 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  height: 3rem;
+  width: 6rem;
+  background: none;
+  border: none;
+  border-radius: .5rem;
+  font-size: 1.25em;
+  color: rgb(0,0,0);
+  cursor: pointer;
+}
+
+.c5 {
+  color: rgb(255,255,255);
+  margin-right: 0;
+  margin-left: 0;
+  border: 2px solid rgb(255,255,255);
+}
+
+.c5:hover {
+  border: none;
+  background: rgb(255,255,255);
+  color: rgb(0,0,0);
+}
+
+.c4 {
+  margin-top: auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c0 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0,0,0,0.75);
+  z-index: 10;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.c3 {
+  padding: 1rem;
+  color: #fff;
+  font-size: 1.5em;
+}
+
+.c2 {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+<Alert
+  button="Ok"
+  handleClick={[MockFunction]}
+  text="this is an alert"
+  type="warning"
+>
+  <Overlay>
+    <styled.div>
+      <StyledComponent
+        forwardedClass={
+          Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "attrs": undefined,
+            "componentStyle": ComponentStyle {
+              "componentId": "sc-bxivhb",
+              "isStatic": true,
+              "lastClassName": "c0",
+              "rules": Array [
+                "
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0,0,0,0.75);
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+",
+              ],
+            },
+            "displayName": "styled.div",
+            "render": [Function],
+            "styledComponentId": "sc-bxivhb",
+            "target": "div",
+            "warnTooManyClasses": [Function],
+            "withComponent": [Function],
+          }
+        }
+        forwardedRef={null}
+      >
+        <div
+          className="c0"
+        >
+          <styled.div>
+            <StyledComponent
+              forwardedClass={
+                Object {
+                  "$$typeof": Symbol(react.forward_ref),
+                  "Bomb": [Function],
+                  "Error": [Function],
+                  "Loader": [Function],
+                  "Success": [Function],
+                  "Text": Object {
+                    "$$typeof": Symbol(react.forward_ref),
+                    "attrs": undefined,
+                    "componentStyle": ComponentStyle {
+                      "componentId": "sc-htoDjs",
+                      "isStatic": true,
+                      "lastClassName": "c3",
+                      "rules": Array [
+                        "
+  padding: 1rem;
+  color: #fff;
+  font-size: 1.5em;
+",
+                      ],
+                    },
+                    "displayName": "styled.span",
+                    "render": [Function],
+                    "styledComponentId": "sc-htoDjs",
+                    "target": "span",
+                    "warnTooManyClasses": [Function],
+                    "withComponent": [Function],
+                  },
+                  "Warning": [Function],
+                  "attrs": undefined,
+                  "componentStyle": ComponentStyle {
+                    "componentId": "sc-iwsKbI",
+                    "isStatic": true,
+                    "lastClassName": "c1",
+                    "rules": Array [
+                      "
+  display: flex;
+  flex-direction: column;
+",
+                    ],
+                  },
+                  "displayName": "styled.div",
+                  "render": [Function],
+                  "styledComponentId": "sc-iwsKbI",
+                  "target": "div",
+                  "warnTooManyClasses": [Function],
+                  "withComponent": [Function],
+                }
+              }
+              forwardedRef={null}
+            >
+              <div
+                className="c1"
+              >
+                <Warning>
+                  <styled.svg
+                    height="120"
+                    viewBox="0 0 1792 1792"
+                    width="120"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <StyledComponent
+                      forwardedClass={
+                        Object {
+                          "$$typeof": Symbol(react.forward_ref),
+                          "attrs": undefined,
+                          "componentStyle": ComponentStyle {
+                            "componentId": "sc-dnqmqq",
+                            "isStatic": true,
+                            "lastClassName": "c2",
+                            "rules": Array [
+                              "
+  margin-left: auto;
+  margin-right: auto;
+",
+                            ],
+                          },
+                          "displayName": "styled.svg",
+                          "render": [Function],
+                          "styledComponentId": "sc-dnqmqq",
+                          "target": "svg",
+                          "warnTooManyClasses": [Function],
+                          "withComponent": [Function],
+                        }
+                      }
+                      forwardedRef={null}
+                      height="120"
+                      viewBox="0 0 1792 1792"
+                      width="120"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <svg
+                        className="c2"
+                        height="120"
+                        viewBox="0 0 1792 1792"
+                        width="120"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M1008 1200v160q0 14-9 23t-23 9h-160q-14 0-23-9t-9-23v-160q0-14 9-23t23-9h160q14 0 23 9t9 23zm256-496q0 50-15 90t-45.5 69-52 44-59.5 36q-32 18-46.5 28t-26 24-11.5 29v32q0 14-9 23t-23 9h-160q-14 0-23-9t-9-23v-68q0-35 10.5-64.5t24-47.5 39-35.5 41-25.5 44.5-21q53-25 75-43t22-49q0-42-43.5-71.5t-95.5-29.5q-56 0-95 27-29 20-80 83-9 12-25 12-11 0-19-6l-108-82q-10-7-12-20t5-23q122-192 349-192 129 0 238.5 89.5t109.5 214.5zm-368-448q-130 0-248.5 51t-204 136.5-136.5 204-51 248.5 51 248.5 136.5 204 204 136.5 248.5 51 248.5-51 204-136.5 136.5-204 51-248.5-51-248.5-136.5-204-204-136.5-248.5-51zm768 640q0 209-103 385.5t-279.5 279.5-385.5 103-385.5-103-279.5-279.5-103-385.5 103-385.5 279.5-279.5 385.5-103 385.5 103 279.5 279.5 103 385.5z"
+                          fill="#fff"
+                        />
+                      </svg>
+                    </StyledComponent>
+                  </styled.svg>
+                </Warning>
+                <styled.span>
+                  <StyledComponent
+                    forwardedClass={
+                      Object {
+                        "$$typeof": Symbol(react.forward_ref),
+                        "attrs": undefined,
+                        "componentStyle": ComponentStyle {
+                          "componentId": "sc-htoDjs",
+                          "isStatic": true,
+                          "lastClassName": "c3",
+                          "rules": Array [
+                            "
+  padding: 1rem;
+  color: #fff;
+  font-size: 1.5em;
+",
+                          ],
+                        },
+                        "displayName": "styled.span",
+                        "render": [Function],
+                        "styledComponentId": "sc-htoDjs",
+                        "target": "span",
+                        "warnTooManyClasses": [Function],
+                        "withComponent": [Function],
+                      }
+                    }
+                    forwardedRef={null}
+                  >
+                    <span
+                      className="c3"
+                    >
+                      this is an alert
+                    </span>
+                  </StyledComponent>
+                </styled.span>
+                <Action
+                  type="overlay"
+                >
+                  <styled.div
+                    type="overlay"
+                  >
+                    <StyledComponent
+                      forwardedClass={
+                        Object {
+                          "$$typeof": Symbol(react.forward_ref),
+                          "attrs": undefined,
+                          "componentStyle": ComponentStyle {
+                            "componentId": "sc-htpNat",
+                            "isStatic": false,
+                            "lastClassName": "c4",
+                            "rules": Array [
+                              "
+  margin-top: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: ",
+                              [Function],
+                              ";
+",
+                            ],
+                          },
+                          "displayName": "styled.div",
+                          "render": [Function],
+                          "styledComponentId": "sc-htpNat",
+                          "target": "div",
+                          "warnTooManyClasses": [Function],
+                          "withComponent": [Function],
+                        }
+                      }
+                      forwardedRef={null}
+                      type="overlay"
+                    >
+                      <div
+                        className="c4"
+                        type="overlay"
+                      >
+                        <Styled(Button)
+                          onClick={[MockFunction]}
+                          type="inverse"
+                        >
+                          <StyledComponent
+                            forwardedClass={
+                              Object {
+                                "$$typeof": Symbol(react.forward_ref),
+                                "attrs": undefined,
+                                "componentStyle": ComponentStyle {
+                                  "componentId": "sc-bwzfXH",
+                                  "isStatic": false,
+                                  "lastClassName": "c5",
+                                  "rules": Array [
+                                    "
+  color: ",
+                                    [Function],
+                                    ";
+  margin-right: ",
+                                    [Function],
+                                    ";
+  margin-left: ",
+                                    [Function],
+                                    ";
+  border: 2px solid ",
+                                    [Function],
+                                    ";
+    &:hover {
+      border: none;
+      background: ",
+                                    [Function],
+                                    ";
+      color: ",
+                                    [Function],
+                                    ";
+  }
+",
+                                  ],
+                                },
+                                "displayName": "Styled(Button)",
+                                "render": [Function],
+                                "styledComponentId": "sc-bwzfXH",
+                                "target": [Function],
+                                "warnTooManyClasses": [Function],
+                                "withComponent": [Function],
+                                Symbol(Symbol.hasInstance): [Function],
+                              }
+                            }
+                            forwardedRef={null}
+                            onClick={[MockFunction]}
+                            type="inverse"
+                          >
+                            <Button
+                              className="c5"
+                              onClick={[MockFunction]}
+                              type="inverse"
+                            >
+                              <styled.button
+                                className="c5"
+                                onClick={[MockFunction]}
+                                type="inverse"
+                              >
+                                <StyledComponent
+                                  className="c5"
+                                  forwardedClass={
+                                    Object {
+                                      "$$typeof": Symbol(react.forward_ref),
+                                      "attrs": undefined,
+                                      "componentStyle": ComponentStyle {
+                                        "componentId": "sc-bdVaJa",
+                                        "isStatic": true,
+                                        "lastClassName": "c6",
+                                        "rules": Array [
+                                          "
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  height: 3rem;
+  width: 6rem;
+  background: none;
+  border: none;
+  border-radius: .5rem;
+  font-size: 1.25em;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+",
+                                        ],
+                                      },
+                                      "displayName": "styled.button",
+                                      "render": [Function],
+                                      "styledComponentId": "sc-bdVaJa",
+                                      "target": "button",
+                                      "warnTooManyClasses": [Function],
+                                      "withComponent": [Function],
+                                    }
+                                  }
+                                  forwardedRef={null}
+                                  onClick={[MockFunction]}
+                                  type="inverse"
+                                >
+                                  <button
+                                    className="c5 c6"
+                                    onClick={[MockFunction]}
+                                    type="inverse"
+                                  >
+                                    Ok
+                                  </button>
+                                </StyledComponent>
+                              </styled.button>
+                            </Button>
+                          </StyledComponent>
+                        </Styled(Button)>
+                      </div>
+                    </StyledComponent>
+                  </styled.div>
+                </Action>
+              </div>
+            </StyledComponent>
+          </styled.div>
+        </div>
+      </StyledComponent>
+    </styled.div>
+  </Overlay>
+</Alert>
+`;
