@@ -3,11 +3,11 @@ import { hot } from 'react-hot-loader';
 import { createGlobalStyle } from 'styled-components';
 import axios from 'axios';
 
-import Action from './blocks/Action';
 import Container from './blocks/Container';
 import Overlay from './blocks/Overlay';
 import Message from './blocks/Message';
 
+import Alert from './components/Alert';
 import Editor from './components/Editor';
 import Explorer from './components/Explorer';
 
@@ -39,17 +39,23 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      alert: {
+        has: false,
+        type: '',
+        button: '',
+        text: '',
+      },
       file: {
         id: '',
         input: '',
         textarea: '',
         initialInput: '',
       },
-      error: false,
       loader: true,
       path: 'root',
       tree: {},
     };
+    this.handleAlertClick = this.handleAlertClick.bind(this);
     this.handleItemSelect = this.handleItemSelect.bind(this);
     this.handleSave = this.handleSave.bind(this);
     this.handleTextEditorChange = this.handleTextEditorChange.bind(this);
@@ -59,14 +65,33 @@ class App extends React.Component {
   async componentDidMount() {
     try {
       const { data } = await axios.get('/filesystem/get/');
-      this.setState(() => ({
-        tree: data,
-        loader: false,
-      }));
+      this.setState(() => ({ tree: data, loader: false }));
     } catch (error) {
       this.setState(() => ({
-        error,
-        ready: false,
+        alert: {
+          has: true,
+          type: 'error',
+          button: 'Reload',
+          text: 'Something went wrong!',
+        },
+      }));
+    }
+  }
+
+  handleAlertClick(event) {
+    event.preventDefault();
+    const { alert } = this.state;
+    if (alert.type === 'error') {
+      window.location.reload();
+    }
+    if (alert.type === 'warning') {
+      this.setState(() => ({
+        alert: {
+          has: false,
+          type: '',
+          button: '',
+          text: '',
+        },
       }));
     }
   }
@@ -93,7 +118,14 @@ class App extends React.Component {
           },
         }));
       } catch (error) {
-        this.setState(() => ({ error }));
+        this.setState(() => ({
+          alert: {
+            has: true,
+            type: 'error',
+            button: 'Reload',
+            text: 'Something went wrong!',
+          },
+        }));
       }
     }
   }
@@ -113,6 +145,7 @@ class App extends React.Component {
   // FIXME what if saving an empty file?
   async handleSave(event) {
     event.preventDefault();
+
     try {
       const {
         path,
@@ -123,13 +156,24 @@ class App extends React.Component {
           initialInput,
         },
       } = this.state;
+
+      if (!input || !textarea) {
+        return this.setState(() => ({
+          alert: {
+            has: true,
+            type: 'warning',
+            button: 'Ok',
+            text: 'File must include a title and body',
+          },
+        }));
+      }
+
       if (!id) {
-        // add the new file
         const insertFile = await axios.post('/file/insert/', {
           name: input,
           data: textarea,
         });
-        // add to the filesystem
+
         const insertNode = await axios.post('/filesystem/insert/', {
           id: insertFile.data.id,
           name: input,
@@ -137,8 +181,8 @@ class App extends React.Component {
           parent: path,
           children: [],
         });
-        // update the state
-        this.setState(() => ({
+
+        return this.setState(() => ({
           file: {
             input,
             textarea,
@@ -147,33 +191,39 @@ class App extends React.Component {
           },
           tree: insertNode.data,
         }));
-      } else {
-        // update existing
-        const updateFile = await axios.put('/file/update/', {
-          id,
-          update: {
-            name: input,
-            data: textarea,
-          },
+      }
+
+      await axios.put('/file/update/', {
+        id,
+        update: {
+          name: input,
+          data: textarea,
+        },
+      });
+
+      if (input !== initialInput) {
+        const renameNode = await axios.put('/filesystem/rename/', {
+          name: initialInput,
+          parent: path,
+          update: { name: input },
         });
-        // check if item is being re named
-        if (input !== initialInput) {
-          const renameNode = await axios.put('/filesystem/rename/', {
-            name: initialInput,
-            parent: path,
-            update: { name: input },
-          });
-          this.setState(prevState => ({
-            file: {
-              ...prevState.file,
-              initialInput: input,
-            },
-            tree: renameNode.data,
-          }));
-        }
+        return this.setState(prevState => ({
+          file: {
+            ...prevState.file,
+            initialInput: input,
+          },
+          tree: renameNode.data,
+        }));
       }
     } catch (error) {
-      this.setState(() => ({ error }));
+      return this.setState(() => ({
+        alert: {
+          has: true,
+          type: 'error',
+          button: 'Reload',
+          text: 'Something went wrong!',
+        },
+      }));
     }
   }
 
@@ -215,22 +265,40 @@ class App extends React.Component {
 
   render() {
     const {
+      alert,
       path,
       loader,
       file: { input, textarea },
     } = this.state;
-    return !loader && (
+    if (alert.has) {
+      // TODO build out Alert function that returns object of props
+      return (
+        <>
+          <GlobalStyle />
+          <Alert
+            text={alert.text}
+            type={alert.type}
+            button={alert.button}
+            handleClick={this.handleAlertClick}
+          />
+        </>
+      );
+    }
+    if (loader) {
+      return (
+        <>
+          <GlobalStyle />
+          <Overlay>
+            <Message>
+              <Message.Loader />
+            </Message>
+          </Overlay>
+        </>
+      );
+    }
+    return (
       <>
         <GlobalStyle />
-        {/* <Overlay>
-          <Message>
-            <Message.Success />
-            <Message.Text>Some Error</Message.Text>
-            <Action type="overlay">
-              <Action.Button type="inverse">Ok</Action.Button>
-            </Action>
-          </Message>
-        </Overlay> */}
         <Container>
           <Explorer
             content={this.traverse(path)}

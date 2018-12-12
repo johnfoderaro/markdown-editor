@@ -5,7 +5,7 @@ import styled from 'styled-components';
 const Svg = styled.svg`
   margin-left: auto;
   margin-right: auto;
-  transform: rotate(-90deg);  
+  transform: rotate(-90deg);
   stroke: #fff;
   circle {
     stroke-dasharray: 260;

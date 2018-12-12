@@ -66,9 +66,6 @@ exports[`<Overlay /> should render correctly 1`] = `
         <h1>
           one
         </h1>
-        <p>
-          two
-        </p>
       </div>
     </StyledComponent>
   </styled.div>

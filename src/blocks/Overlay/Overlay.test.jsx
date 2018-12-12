@@ -10,7 +10,6 @@ beforeAll(() => {
   tree = mount(
     <Overlay>
       <h1>one</h1>
-      <p>two</p>
     </Overlay>,
   );
 });
@@ -24,6 +23,5 @@ describe('<Overlay />', () => {
   });
   it('should render children correctly', () => {
     expect(tree.find('h1').text()).toEqual('one');
-    expect(tree.find('p').text()).toEqual('two');
   });
 });
