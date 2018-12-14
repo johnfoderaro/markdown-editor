@@ -4,11 +4,9 @@ import App from './App';
 
 import ErrorBoundary from './components/ErrorBoundary';
 
-const root = document.getElementById('root');
-
 ReactDOM.render(
   <ErrorBoundary>
     <App />
   </ErrorBoundary>,
-  root,
+  document.getElementById('root'),
 );

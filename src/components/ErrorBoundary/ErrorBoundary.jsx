@@ -38,8 +38,7 @@ class ErrorBoundary extends React.Component {
   }
 
   componentDidCatch(error, info) {
-    // Display fallback UI
-    this.setState({ hasError: true });
+    this.setState(() => ({ hasError: true }));
     // TODO log these errors somewhere ?
   }
 
@@ -54,7 +53,7 @@ class ErrorBoundary extends React.Component {
             <Message.Bomb />
             <Message.Text>Something blew up!</Message.Text>
             <Action type="overlay">
-              <Action.Button type="inverse" onClick={() => window.location.reload()}>Reload</Action.Button>
+              <Action.Button type="inverse" onClick={() => window.location.reload(true)}>Reload</Action.Button>
             </Action>
           </Message>
         </Overlay>
@@ -64,7 +63,7 @@ class ErrorBoundary extends React.Component {
 }
 
 ErrorBoundary.propTypes = {
-  children: PropTypes.element.isRequired,
+  children: PropTypes.node.isRequired,
 };
 
 export default hot(module)(ErrorBoundary);
