@@ -6,6 +6,9 @@ import Editor from './Editor';
 import Text from '../../blocks/Text';
 
 const handleChange = jest.fn();
+const handleDelete = jest.fn();
+const handleSave = jest.fn();
+
 let wrapper;
 let input;
 let textarea;
@@ -13,7 +16,13 @@ let textarea;
 beforeAll(() => {
   input = 'hello-world.md';
   textarea = 'Hello, world!';
-  wrapper = shallow(<Editor input={input} textarea={textarea} handleChange={handleChange} />);
+  wrapper = shallow(<Editor
+    input={input}
+    textarea={textarea}
+    handleChange={handleChange}
+    handleDelete={handleDelete}
+    handleSave={handleSave}
+  />);
 });
 
 describe('<Editor />', () => {

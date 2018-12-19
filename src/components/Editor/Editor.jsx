@@ -11,6 +11,7 @@ const Editor = ({
   textarea,
   handleChange,
   handleSave,
+  handleDelete,
 }) => (
   <Panel type="editor">
     <Text>
@@ -18,8 +19,8 @@ const Editor = ({
       <Text.Content placeholder="&quot;The first draft is just you telling yourself the story.&quot;" onChange={handleChange} value={textarea} />
     </Text>
     <Action type="editor">
-      <Action.Button type="save" onClick={handleSave}>Save</Action.Button>
-      <Action.Button type="delete">Delete</Action.Button>
+      <Action.Button type="save" onClick={handleSave} data-type="save">Save</Action.Button>
+      <Action.Button type="delete" onClick={handleDelete} data-type="delete">Delete</Action.Button>
     </Action>
   </Panel>
 );
@@ -29,6 +30,7 @@ Editor.propTypes = {
   textarea: PropTypes.string,
   handleChange: PropTypes.func.isRequired,
   handleSave: PropTypes.func.isRequired,
+  handleDelete: PropTypes.func.isRequired,
 };
 
 Editor.defaultProps = {

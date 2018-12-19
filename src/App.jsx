@@ -40,10 +40,12 @@ class App extends React.Component {
     super(props);
     this.state = {
       alert: {
-        has: false,
-        type: '',
+        action: null,
+        cancel: false,
         button: '',
+        has: false,
         text: '',
+        type: '',
       },
       file: {
         id: '',
@@ -55,10 +57,12 @@ class App extends React.Component {
       path: 'root',
       tree: {},
     };
-    this.handleAlertClick = this.handleAlertClick.bind(this);
+    this.handleAlert = this.handleAlert.bind(this);
+    this.handleCancel = this.handleCancel.bind(this);
+    this.handleEditorChange = this.handleEditorChange.bind(this);
+    this.handleItemDelete = this.handleItemDelete.bind(this);
+    this.handleItemSave = this.handleItemSave.bind(this);
     this.handleItemSelect = this.handleItemSelect.bind(this);
-    this.handleSave = this.handleSave.bind(this);
-    this.handleTextEditorChange = this.handleTextEditorChange.bind(this);
     this.traverse = this.traverse.bind(this);
   }
 
@@ -69,81 +73,158 @@ class App extends React.Component {
     } catch (error) {
       this.setState(() => ({
         alert: {
-          has: true,
-          type: 'error',
+          action: null,
           button: 'Reload',
+          cancel: false,
+          has: true,
           text: 'Something went wrong!',
+          type: 'error',
         },
       }));
     }
   }
 
-  handleAlertClick(event) {
+  async handleAlert(event) {
     event.preventDefault();
-    const { alert } = this.state;
+    const { alert, file, path } = this.state;
     if (alert.type === 'error') {
-      window.location.reload();
+      window.location.reload(true);
     }
-    if (alert.type === 'warning') {
+    if (alert.action === 'rename') {
+      const {
+        id,
+        input,
+        initialInput,
+        textarea,
+      } = file;
+      const updateNode = await axios.put('/file/update/', {
+        id,
+        update: {
+          name: input,
+          data: textarea,
+        },
+      });
+      const renameNode = await axios.put('/filesystem/rename/', {
+        name: initialInput,
+        parent: path,
+        update: { name: input },
+      });
+      this.setState(prevState => ({
+        alert: {
+          action: null,
+          button: '',
+          cancel: false,
+          has: false,
+          text: '',
+          type: '',
+        },
+        file: {
+          ...prevState.file,
+          initialInput: input,
+        },
+        tree: renameNode.data,
+      }));
+    }
+    if (alert.type === 'warning' && alert.action === 'save') {
       this.setState(() => ({
         alert: {
-          has: false,
-          type: '',
+          action: null,
+          cancel: false,
           button: '',
+          has: false,
           text: '',
+          type: '',
         },
       }));
     }
-  }
-
-  // async handleItemCreate(event) {
-
-  // }
-
-  async handleItemSelect(event) {
-    event.preventDefault();
-    const { id, path, type } = event.target.dataset;
-    if (type === 'dir') {
-      this.setState(() => ({ path }));
-    }
-    if (type === 'file') {
+    if (alert.type === 'warning' && alert.action === 'delete') {
       try {
-        const { data } = await axios.get(`/file/get/${id}/`);
+        const { file: { id, initialInput }, path } = this.state;
+        const name = initialInput;
+        const deleteFile = await axios.delete(`/file/remove/${id}`);
+        const deleteNode = await axios.delete(`/filesystem/remove/${path}/${name}`);
         this.setState(() => ({
           file: {
-            id,
-            input: data.name,
-            textarea: data.data,
-            initialInput: data.name,
+            id: '',
+            input: '',
+            textarea: '',
+            initialInput: '',
           },
+          alert: {
+            action: null,
+            cancel: false,
+            button: '',
+            has: false,
+            text: '',
+            type: '',
+          },
+          tree: deleteNode.data,
         }));
       } catch (error) {
         this.setState(() => ({
           alert: {
-            has: true,
-            type: 'error',
+            action: null,
             button: 'Reload',
+            cancel: false,
+            has: true,
             text: 'Something went wrong!',
+            type: 'error',
           },
         }));
       }
     }
   }
 
-  handleTextEditorChange(event) {
+  handleCancel(event) {
+    event.preventDefault();
+    this.setState(() => ({
+      alert: {
+        action: null,
+        button: '',
+        cancel: false,
+        has: false,
+        type: '',
+        text: '',
+      },
+    }));
+  }
+
+  handleEditorChange(event) {
     event.preventDefault();
     const { localName, value } = event.target;
     this.setState((prevState) => {
       const { file } = prevState;
       file[localName] = value;
-      return file;
+      return { file };
     });
+  }
+  // handleNewFile() {
+
+  // }
+
+  // async handleNewDir() {
+
+  // }
+
+  async handleItemDelete(event) {
+    const { file: { input }, path } = this.state;
+    event.preventDefault();
+    this.setState(() => ({
+      alert: {
+        action: 'delete',
+        button: 'Ok',
+        cancel: true,
+        has: true,
+        text: `Delete '${path}/${input}'?`,
+        type: 'warning',
+      },
+    }));
   }
 
   // console.log(this.state);
   // TODO if 200, show save successful feedback
   // FIXME what if saving an empty file?
-  async handleSave(event) {
+  async handleItemSave(event) {
     event.preventDefault();
 
     try {
@@ -155,15 +236,33 @@ class App extends React.Component {
           textarea,
           initialInput,
         },
+        tree,
       } = this.state;
 
-      if (!input || !textarea) {
+      const duplicate = tree.children.find(node => node.name === input);
+
+      if (duplicate) {
         return this.setState(() => ({
           alert: {
-            has: true,
-            type: 'warning',
+            action: 'save',
             button: 'Ok',
+            cancel: false,
+            has: true,
+            text: `${input} already exists`,
+            type: 'warning',
+          },
+        }));
+      }
+
+      if (!input && !textarea) {
+        return this.setState(() => ({
+          alert: {
+            action: 'save',
+            button: 'Ok',
+            cancel: false,
+            has: true,
             text: 'File must include a title and body',
+            type: 'warning',
           },
         }));
       }
@@ -193,37 +292,69 @@ class App extends React.Component {
         }));
       }
 
-      await axios.put('/file/update/', {
+      if (input !== initialInput) {
+        return this.setState(() => ({
+          alert: {
+            action: 'rename',
+            button: 'Ok',
+            cancel: true,
+            has: true,
+            text: `Rename ${initialInput} \n to ${input}?`,
+            type: 'warning',
+          },
+        }));
+      }
+
+      const updateNode = await axios.put('/file/update/', {
         id,
         update: {
           name: input,
           data: textarea,
         },
       });
-
-      if (input !== initialInput) {
-        const renameNode = await axios.put('/filesystem/rename/', {
-          name: initialInput,
-          parent: path,
-          update: { name: input },
-        });
-        return this.setState(prevState => ({
-          file: {
-            ...prevState.file,
-            initialInput: input,
-          },
-          tree: renameNode.data,
-        }));
-      }
     } catch (error) {
       return this.setState(() => ({
         alert: {
-          has: true,
-          type: 'error',
+          action: null,
           button: 'Reload',
+          cance: false,
+          has: true,
           text: 'Something went wrong!',
+          type: 'error',
         },
       }));
+    }
+  }
+
+  async handleItemSelect(event) {
+    event.preventDefault();
+    const { id, path, type } = event.target.dataset;
+    if (type === 'dir') {
+      this.setState(() => ({ path }));
+    }
+    if (type === 'file') {
+      try {
+        const { data } = await axios.get(`/file/get/${id}/`);
+        this.setState(() => ({
+          file: {
+            id,
+            input: data.name,
+            textarea: data.data,
+            initialInput: data.name,
+          },
+        }));
+      } catch (error) {
+        this.setState(() => ({
+          alert: {
+            action: null,
+            button: 'Reload',
+            cancel: false,
+            has: true,
+            text: 'Something went wrong!',
+            type: 'error',
+          },
+        }));
+      }
     }
   }
 
@@ -276,10 +407,9 @@ class App extends React.Component {
         <>
           <GlobalStyle />
           <Alert
-            text={alert.text}
-            type={alert.type}
-            button={alert.button}
-            handleClick={this.handleAlertClick}
+            alert={alert}
+            handleCancel={this.handleCancel}
+            handleClick={this.handleAlert}
           />
         </>
       );
@@ -307,8 +437,9 @@ class App extends React.Component {
           <Editor
             input={input}
             textarea={textarea}
-            handleChange={this.handleTextEditorChange}
-            handleSave={this.handleSave}
+            handleChange={this.handleEditorChange}
+            handleDelete={this.handleItemDelete}
+            handleSave={this.handleItemSave}
           />
         </Container>
       </>

@@ -86,10 +86,16 @@ exports[`<Alert /> should render correctly 1`] = `
 }
 
 <Alert
-  button="Reload"
+  alert={
+    Object {
+      "action": "save",
+      "button": "Reload",
+      "cancel": false,
+      "text": "this is an alert",
+      "type": "error",
+    }
+  }
   handleClick={[MockFunction]}
-  text="this is an alert"
-  type="error"
 >
   <Overlay>
     <styled.div>
@@ -317,10 +323,12 @@ exports[`<Alert /> should render correctly 1`] = `
                         type="overlay"
                       >
                         <Styled(Button)
+                          data-action="save"
                           onClick={[MockFunction]}
                           type="inverse"
                         >
                           <StyledComponent
+                            data-action="save"
                             forwardedClass={
                               Object {
                                 "$$typeof": Symbol(react.forward_ref),
@@ -370,16 +378,19 @@ exports[`<Alert /> should render correctly 1`] = `
                           >
                             <Button
                               className="c5"
+                              data-action="save"
                               onClick={[MockFunction]}
                               type="inverse"
                             >
                               <styled.button
                                 className="c5"
+                                data-action="save"
                                 onClick={[MockFunction]}
                                 type="inverse"
                               >
                                 <StyledComponent
                                   className="c5"
+                                  data-action="save"
                                   forwardedClass={
                                     Object {
                                       "$$typeof": Symbol(react.forward_ref),
@@ -417,6 +428,7 @@ exports[`<Alert /> should render correctly 1`] = `
                                 >
                                   <button
                                     className="c5 c6"
+                                    data-action="save"
                                     onClick={[MockFunction]}
                                     type="inverse"
                                   >
@@ -527,10 +539,16 @@ exports[`<Alert /> should render correctly 2`] = `
 }
 
 <Alert
-  button="Ok"
+  alert={
+    Object {
+      "action": "save",
+      "button": "Ok",
+      "cancel": false,
+      "text": "this is an alert",
+      "type": "success",
+    }
+  }
   handleClick={[MockFunction]}
-  text="this is an alert"
-  type="success"
 >
   <Overlay>
     <styled.div>
@@ -758,10 +776,12 @@ exports[`<Alert /> should render correctly 2`] = `
                         type="overlay"
                       >
                         <Styled(Button)
+                          data-action="save"
                           onClick={[MockFunction]}
                           type="inverse"
                         >
                           <StyledComponent
+                            data-action="save"
                             forwardedClass={
                               Object {
                                 "$$typeof": Symbol(react.forward_ref),
@@ -811,16 +831,19 @@ exports[`<Alert /> should render correctly 2`] = `
                           >
                             <Button
                               className="c5"
+                              data-action="save"
                               onClick={[MockFunction]}
                               type="inverse"
                             >
                               <styled.button
                                 className="c5"
+                                data-action="save"
                                 onClick={[MockFunction]}
                                 type="inverse"
                               >
                                 <StyledComponent
                                   className="c5"
+                                  data-action="save"
                                   forwardedClass={
                                     Object {
                                       "$$typeof": Symbol(react.forward_ref),
@@ -858,6 +881,7 @@ exports[`<Alert /> should render correctly 2`] = `
                                 >
                                   <button
                                     className="c5 c6"
+                                    data-action="save"
                                     onClick={[MockFunction]}
                                     type="inverse"
                                   >
@@ -968,10 +992,16 @@ exports[`<Alert /> should render correctly 3`] = `
 }
 
 <Alert
-  button="Ok"
+  alert={
+    Object {
+      "action": "save",
+      "button": "Reload",
+      "cancel": false,
+      "text": "this is an alert",
+      "type": "warning",
+    }
+  }
   handleClick={[MockFunction]}
-  text="this is an alert"
-  type="warning"
 >
   <Overlay>
     <styled.div>
@@ -1199,10 +1229,12 @@ exports[`<Alert /> should render correctly 3`] = `
                         type="overlay"
                       >
                         <Styled(Button)
+                          data-action="save"
                           onClick={[MockFunction]}
                           type="inverse"
                         >
                           <StyledComponent
+                            data-action="save"
                             forwardedClass={
                               Object {
                                 "$$typeof": Symbol(react.forward_ref),
@@ -1252,16 +1284,19 @@ exports[`<Alert /> should render correctly 3`] = `
                           >
                             <Button
                               className="c5"
+                              data-action="save"
                               onClick={[MockFunction]}
                               type="inverse"
                             >
                               <styled.button
                                 className="c5"
+                                data-action="save"
                                 onClick={[MockFunction]}
                                 type="inverse"
                               >
                                 <StyledComponent
                                   className="c5"
+                                  data-action="save"
                                   forwardedClass={
                                     Object {
                                       "$$typeof": Symbol(react.forward_ref),
@@ -1299,10 +1334,11 @@ exports[`<Alert /> should render correctly 3`] = `
                                 >
                                   <button
                                     className="c5 c6"
+                                    data-action="save"
                                     onClick={[MockFunction]}
                                     type="inverse"
                                   >
-                                    Ok
+                                    Reload
                                   </button>
                                 </StyledComponent>
                               </styled.button>

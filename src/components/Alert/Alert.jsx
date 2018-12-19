@@ -7,9 +7,14 @@ import Overlay from '../../blocks/Overlay';
 import Message from '../../blocks/Message';
 
 const Alert = ({
-  text,
-  type,
-  button,
+  alert: {
+    action,
+    cancel,
+    text,
+    type,
+    button,
+  },
+  handleCancel,
   handleClick,
 }) => (
   <Overlay>
@@ -19,16 +24,27 @@ const Alert = ({
       { type === 'warning' && <Message.Warning />}
       <Message.Text>{text}</Message.Text>
       <Action type="overlay">
-        <Action.Button type="inverse" onClick={handleClick}>{button}</Action.Button>
+        { cancel
+          ? <>
+            <Action.Button type="inverse" onClick={handleCancel} data-action="cancel">Cancel</Action.Button>
+            <Action.Button type="inverse" onClick={handleClick} data-action={action}>{button}</Action.Button>
+            </>
+          : <Action.Button type="inverse" onClick={handleClick} data-action={action}>{button}</Action.Button>
+        }
       </Action>
     </Message>
   </Overlay>
 );
 
 Alert.propTypes = {
-  text: PropTypes.string.isRequired,
-  type: PropTypes.string.isRequired,
-  button: PropTypes.string.isRequired,
+  alert: PropTypes.shape({
+    action: PropTypes.string.isRequired,
+    button: PropTypes.string.isRequired,
+    cancel: PropTypes.bool.isRequired,
+    text: PropTypes.string.isRequired,
+    type: PropTypes.string.isRequired,
+  }).isRequired,
+  handleCancel: PropTypes.func.isRequired,
   handleClick: PropTypes.func.isRequired,
 };
 

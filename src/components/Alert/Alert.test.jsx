@@ -9,28 +9,43 @@ let success;
 let warning;
 
 beforeAll(() => {
+  const errorAlert = {
+    action: 'save',
+    cancel: false,
+    text: 'this is an alert',
+    type: 'error',
+    button: 'Reload',
+  };
+  const successAlert = {
+    action: 'save',
+    cancel: false,
+    text: 'this is an alert',
+    type: 'success',
+    button: 'Ok',
+  };
+  const warningAlert = {
+    action: 'save',
+    cancel: false,
+    text: 'this is an alert',
+    type: 'warning',
+    button: 'Reload',
+  };
   const handleAlertClick = jest.fn();
   error = mount(
     <Alert
-      text="this is an alert"
-      type="error"
-      button="Reload"
+      alert={errorAlert}
       handleClick={handleAlertClick}
     />,
   );
   success = mount(
     <Alert
-      text="this is an alert"
-      type="success"
-      button="Ok"
+      alert={successAlert}
       handleClick={handleAlertClick}
     />,
   );
   warning = mount(
     <Alert
-      text="this is an alert"
-      type="warning"
-      button="Ok"
+      alert={warningAlert}
       handleClick={handleAlertClick}
     />,
   );
